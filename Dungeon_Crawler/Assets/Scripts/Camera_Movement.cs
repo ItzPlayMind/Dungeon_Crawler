@@ -13,13 +13,14 @@ public class Camera_Movement : MonoBehaviour
     private void Start()
     {
         NetworkManager.instance.onSetup += OnSetup;
+        Quaternion lookRotation = Quaternion.LookRotation((Vector3.zero - transform.position).normalized);
+        offset = transform.position - Vector3.zero;
+        transform.rotation = lookRotation;
     }
 
     public void OnSetup(GameObject player)
     {
         target = player.transform;
-        offset = transform.position - target.position;
-        transform.LookAt(target);
     }
     
     void Update()
@@ -35,6 +36,7 @@ public class Camera_Movement : MonoBehaviour
         }
         else
         {
+            
             if (Input.mousePosition.y >= Screen.height * 0.95)
             {
                 transform.Translate(Vector3.forward * Time.deltaTime * ScrollSpeed, Space.World);

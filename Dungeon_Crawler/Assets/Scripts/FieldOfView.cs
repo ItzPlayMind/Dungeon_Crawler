@@ -54,11 +54,11 @@ public class FieldOfView : MonoBehaviour
         int triangleIndex = 0;
         for (int i = 0; i <= rayCount; i++)
         {
-            Vector3 vertex = origin + GetVectorFromAngle(angle) * 1000;
+            Vector3 vertex = origin + GetVectorFromAngle(angle) * viewDistance;
 
             RaycastHit hit;
 
-            if (Physics.Raycast(transform.position, GetVectorFromAngle(angle), out hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(transform.position, GetVectorFromAngle(angle), out hit, viewDistance, layerMask))
             {
                 vertex = hit.point-transform.position;
             }

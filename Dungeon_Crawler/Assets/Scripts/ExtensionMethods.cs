@@ -12,4 +12,13 @@ public static class ExtensionMethods
         obj.AddField("z", Mathf.Round(pos.z * 1000f));
         return obj;
     }
+
+    public static string RemoveQuotations(this string s)
+    {
+        if (s.Contains("\""))
+        {
+            return s.Replace("\"", "");
+        }
+        return s;
+    }
 }
