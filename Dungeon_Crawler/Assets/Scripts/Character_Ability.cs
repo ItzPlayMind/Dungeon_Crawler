@@ -32,8 +32,7 @@ public class Character_Ability : NetworkBehaviour
             Vector3 dir = (mouseWorldPosition() - transform.position);
             if (Input.GetKey(KeyCode.Alpha1))
             {
-                
-                display.DisplayRangedAttack(transform.position, dir.normalized, Mathf.Min(dir.magnitude, 10f), 2f);
+                display.DisplayRangedAttack(transform.position + Vector3.up*0.1f, dir.normalized, skills[0].range, 2f);
                 activeSkill = skills[0];
                 agent.SetDestination(transform.position);
                 transform.rotation = Quaternion.LookRotation(dir.normalized);
@@ -60,6 +59,7 @@ public class Character_Ability : NetworkBehaviour
             {
                 if (activeSkill != null)
                 {
+                    
                     activeSkill.Use(ID);
                     JSONObject Jobj = new JSONObject();
                     Jobj.AddField("id", ID);

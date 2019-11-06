@@ -7,6 +7,7 @@ public class Stat : ScriptableObject
 {
     public float value;
     float baseValue;
+    public float BaseValue { get => baseValue; }
 
     public void Setup()
     {

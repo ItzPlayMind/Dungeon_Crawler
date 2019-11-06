@@ -11,14 +11,28 @@ public class Skill : ScriptableObject
 {
     public float damage;
     public float manaCost;
-    public SkillData data;
-    public string methodName;
+    public float range;
+    public float cooldown;
+    [Header("On Use Method")]
+    public string onUseMethodName;
+    public SkillData onUseData;
+
+    [Header("On Hit Method")]
+    public string onHitMethodName;
+    public SkillData onHitData;
 
     public void Use(string id)
     {
         Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
         Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
-        assembly.GetType("ScriptSkills").GetMethod(methodName).Invoke(null, new object[] { data, id});
+        assembly.GetType("ScriptSkills").GetMethod(onUseMethodName).Invoke(null, new object[] { onUseData, id, this});
+    }
+
+    public void OnHit(GameObject target, GameObject user)
+    {
+        Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+        Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
+        assembly.GetType("ScriptSkills").GetMethod(onHitMethodName).Invoke(null, new object[] { onUseData, user, target, this });
     }
 
     public Skill Copy()
@@ -27,8 +41,12 @@ public class Skill : ScriptableObject
         skill.name = name;
         skill.damage = damage;
         skill.manaCost = manaCost;
-        skill.data = data;
-        skill.methodName = methodName;
+        skill.onUseData = onUseData;
+        skill.onUseMethodName = onUseMethodName;
+        skill.onHitData = onHitData;
+        skill.onHitMethodName = onHitMethodName;
+        skill.range = range;
+        skill.cooldown = cooldown;
         return skill;
     }
 }

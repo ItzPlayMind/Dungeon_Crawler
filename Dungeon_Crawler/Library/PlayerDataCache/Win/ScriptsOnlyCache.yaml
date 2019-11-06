@@ -8,8 +8,10 @@ ScriptsOnlyBuild:
     - Character_Stats
     - FieldOfView
     - Flying_Object
+    - HealthBar
     - NetworkIdentity
     - NetworkManager
+    - NetworkTrigger
     - Skill
     - SkillData
     - Stat
@@ -18,7 +20,12 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.RenderObjects
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
-    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
@@ -31,6 +38,8 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.Image
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -50,6 +59,8 @@ ScriptsOnlyBuild:
     - Class: 43
       Script: {instanceID: 0}
     - Class: 48
+      Script: {instanceID: 0}
+    - Class: 49
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
@@ -71,39 +82,59 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
+    - Class: 109
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 9800}
     - Class: 114
       Script: {instanceID: 9940}
     - Class: 114
+      Script: {instanceID: 10194}
+    - Class: 114
       Script: {instanceID: 10368}
     - Class: 114
-      Script: {instanceID: 10884}
+      Script: {instanceID: 10816}
     - Class: 114
-      Script: {instanceID: 10918}
+      Script: {instanceID: 10888}
     - Class: 114
-      Script: {instanceID: 11322}
+      Script: {instanceID: 10922}
     - Class: 114
-      Script: {instanceID: 11484}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11726}
+      Script: {instanceID: 11040}
     - Class: 114
-      Script: {instanceID: 11880}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 11490}
     - Class: 114
-      Script: {instanceID: 12158}
+      Script: {instanceID: 11732}
     - Class: 114
-      Script: {instanceID: 13060}
+      Script: {instanceID: 11864}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 24502}
+      Script: {instanceID: 11964}
     - Class: 114
-      Script: {instanceID: 24508}
+      Script: {instanceID: 11984}
     - Class: 114
-      Script: {instanceID: 38446}
+      Script: {instanceID: 12148}
+    - Class: 114
+      Script: {instanceID: 12166}
+    - Class: 114
+      Script: {instanceID: 12294}
+    - Class: 114
+      Script: {instanceID: 12704}
+    - Class: 114
+      Script: {instanceID: 13070}
+    - Class: 114
+      Script: {instanceID: 13196}
+    - Class: 114
+      Script: {instanceID: 28446}
+    - Class: 114
+      Script: {instanceID: 35554}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 135
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -114,6 +145,12 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     - Class: 238
       Script: {instanceID: 0}
@@ -296,6 +333,12 @@ ScriptsOnlyBuild:
     className: PostProcessProfile
   - hash:
       serializedVersion: 2
+      Hash: d93f4f4c1fd32dcdaf045d077e643698
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkScriptableObject
+  - hash:
+      serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -368,6 +411,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 6089ca458871df9f37a74b25239916c2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Skill
+  - hash:
+      serializedVersion: 2
       Hash: 7e6ed836cbaa230e56d6a2bbae1b9bb5
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -408,6 +457,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: 1a01ebedf90acbfcee2b08332ed3dacf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SkillData
   - hash:
       serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
@@ -542,7 +597,13 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 246a43c8ac1847df1e6d501a0a979e2e
+      Hash: 0e79473d8c11ce6a2c4c475020ede90e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Flying_Object
+  - hash:
+      serializedVersion: 2
+      Hash: 623b1df6e56db82f4f35735149f4dfc9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Character_Stats
@@ -806,29 +867,29 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 74b1c319769bd6dfc4c1f93b0345a378
+      Hash: 7ab7df2e0ea30a70f0549fc2c5ec0e71
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Skill
+    className: NetworkTrigger
   - hash:
       serializedVersion: 2
-      Hash: 1a01ebedf90acbfcee2b08332ed3dacf
+      Hash: c57b959901196970c63cf527ede20d7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: SkillData
+    className: BaseEffect
   - hash:
       serializedVersion: 2
-      Hash: d93f4f4c1fd32dcdaf045d077e643698
+      Hash: c57b959901196970c63cf527ede20d7d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: NetworkScriptableObject
+    className: Stunned
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 89b3d826f3abe638809f285b410f746b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Flying_Object
+    className: HealthBar
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe

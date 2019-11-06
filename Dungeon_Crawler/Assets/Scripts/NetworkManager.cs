@@ -16,10 +16,7 @@ public class NetworkManager : SocketIOComponent
         instance = this;
     }
     #endregion
-
-
-
-
+    
     public GameObject Player { get; private set; }
 
     public Action<GameObject> onSetup;
@@ -121,6 +118,7 @@ public class NetworkManager : SocketIOComponent
                     if (item.name == e.data["abilityID"].ToString().RemoveQuotations())
                     {
                         item.Use(e.data["id"].ToString().RemoveQuotations());
+                        break;
                     }
                 }
             }
