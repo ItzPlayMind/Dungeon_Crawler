@@ -23,7 +23,7 @@ public class Ability_Display : MonoBehaviour
         if (display == null)
         {
             display = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            display.layer = LayerMask.NameToLayer("BehindMask");
+            //display.layer = LayerMask.NameToLayer("Mask");
             DestroyImmediate(display.GetComponent<Collider>());
         }
         dir.y = 0;
@@ -43,7 +43,7 @@ public class Ability_Display : MonoBehaviour
         if (display == null)
         {
             display = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            display.layer = LayerMask.NameToLayer("BehindMask");
+            //display.layer = LayerMask.NameToLayer("Mask");
             DestroyImmediate(display.GetComponent<Collider>());
         }
         if (display2 == null)
@@ -74,7 +74,7 @@ public class Ability_Display : MonoBehaviour
         if (display == null)
         {
             display = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            display.layer = LayerMask.NameToLayer("BehindMask");
+            //display.layer = LayerMask.NameToLayer("Mask");
             DestroyImmediate(display.GetComponent<Collider>());
         }
         display.transform.SetParent(transform);

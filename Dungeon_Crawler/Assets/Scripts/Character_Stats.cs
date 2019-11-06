@@ -10,10 +10,13 @@ public class Character_Stats : NetworkBehaviour
     
     private void Start()
     {
+        
         for (int i = 0; i < stats.Count; i++)
         {
             stats[i] = (Stat)stats[i].Copy();
         }
+        healthbar.SetHealthValue(1);
+        healthbar.SetManaValue(1);
     }
 
     public Stat GetStat(string name)

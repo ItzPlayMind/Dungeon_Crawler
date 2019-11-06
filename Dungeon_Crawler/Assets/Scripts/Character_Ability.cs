@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Character_Ability : NetworkBehaviour
 {
@@ -14,12 +15,19 @@ public class Character_Ability : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         ownStats = GetComponent<Character_Stats>();
         agent = GetComponent<NavMeshAgent>();
         for (int i = 0; i < skills.Length; i++)
         {
             skills[i] = (Skill)skills[i].Copy();
         }
+
+        if (isLocal)
+        {
+            Ability_Display_Panel.instance.Setup(skills);
+        }
+        
     }
 
     Skill activeSkill = null;
@@ -30,26 +38,37 @@ public class Character_Ability : NetworkBehaviour
         if (isLocal)
         {
             Vector3 dir = (mouseWorldPosition() - transform.position);
+            dir.y = 0;
             if (Input.GetKey(KeyCode.Alpha1))
             {
-                display.DisplayRangedAttack(transform.position + Vector3.up*0.1f, dir.normalized, skills[0].range, 2f);
-                activeSkill = skills[0];
-                agent.SetDestination(transform.position);
-                transform.rotation = Quaternion.LookRotation(dir.normalized);
+                if (skills[0].CanUse)
+                {
+                    //display.DisplayRangedAttack(transform.position + Vector3.up * 0.1f, dir.normalized, skills[0].range, 2f);
+                    skills[0].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    activeSkill = skills[0];
+                    agent.SetDestination(transform.position);
+                    transform.rotation = Quaternion.LookRotation(dir.normalized);
+                }
             }
             else if (Input.GetKey(KeyCode.Alpha2))
             {
-                display.DisplayCircleClickAttack(transform.position, 20f);
-                activeSkill = skills[1];
-                agent.SetDestination(transform.position);
-                transform.rotation = Quaternion.LookRotation(dir.normalized);
+                if (skills[1].CanUse)
+                {
+                    skills[1].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    activeSkill = skills[1];
+                    agent.SetDestination(transform.position);
+                    transform.rotation = Quaternion.LookRotation(dir.normalized);
+                }
             }
             else if (Input.GetKey(KeyCode.Alpha3))
             {
-                display.DisplayCircleCircleAttack(transform.position, mouseWorldPosition(), 20f, 5f);
-                activeSkill = skills[2];
-                agent.SetDestination(transform.position);
-                transform.rotation = Quaternion.LookRotation(dir.normalized);
+                if (skills[2].CanUse)
+                {
+                    skills[2].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    activeSkill = skills[2];
+                    agent.SetDestination(transform.position);
+                    transform.rotation = Quaternion.LookRotation(dir.normalized);
+                }
             }
             else if (Input.GetKey(KeyCode.C))
             {
@@ -59,8 +78,7 @@ public class Character_Ability : NetworkBehaviour
             {
                 if (activeSkill != null)
                 {
-                    
-                    activeSkill.Use(ID);
+                    activeSkill.Use(ID,mouseWorldPosition());
                     JSONObject Jobj = new JSONObject();
                     Jobj.AddField("id", ID);
                     Jobj.AddField("abilityID", activeSkill.name.RemoveQuotations());
@@ -69,6 +87,13 @@ public class Character_Ability : NetworkBehaviour
                 }
                 display.ResetDisplay();
                 activeSkill = null;
+            }
+            int i = 0;
+            foreach (var item in skills)
+            {
+                item.Cooldown();
+                Ability_Display_Panel.instance.SetTimeForIndex(i,item.getTime/item.cooldown);
+                i++;
             }
         }
     }

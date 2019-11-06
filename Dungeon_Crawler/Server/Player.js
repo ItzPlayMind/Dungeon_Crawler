@@ -6,5 +6,6 @@ module.exports = class Player{
         this.id = shortID.generate();
         this.position = new Vector3(0, 0, 0);
         this.rotation = new Vector3(0, 0, 0);
+        this.isRedTeam = false;
     }
 }

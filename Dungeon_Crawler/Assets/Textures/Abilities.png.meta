@@ -1,0 +1,943 @@
+fileFormatVersion: 2
+guid: 63f9cfa84132c5245b350d01301e26bc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4773031513114947462
+    second: Abilities_0
+  - first:
+      213: -1184081909042567840
+    second: Abilities_1
+  - first:
+      213: -3594672465257244376
+    second: Abilities_2
+  - first:
+      213: -3334098486080132323
+    second: Abilities_3
+  - first:
+      213: -7312252029852053250
+    second: Abilities_4
+  - first:
+      213: -2566087584513626101
+    second: Abilities_5
+  - first:
+      213: -6297846103194970497
+    second: Abilities_6
+  - first:
+      213: 8721644764572381250
+    second: Abilities_7
+  - first:
+      213: 4226310092395897613
+    second: Abilities_8
+  - first:
+      213: 4557577659295867294
+    second: Abilities_9
+  - first:
+      213: 6688456772018066354
+    second: Abilities_10
+  - first:
+      213: 6417038043319163069
+    second: Abilities_11
+  - first:
+      213: 7744730106316291705
+    second: Abilities_12
+  - first:
+      213: -7896194131559856813
+    second: Abilities_13
+  - first:
+      213: -2703354473452544312
+    second: Abilities_14
+  - first:
+      213: 6973102110618458736
+    second: Abilities_15
+  - first:
+      213: -5733100162432585064
+    second: Abilities_16
+  - first:
+      213: -845441487989709847
+    second: Abilities_17
+  - first:
+      213: -162489617209041318
+    second: Abilities_18
+  - first:
+      213: 168156748368108048
+    second: Abilities_19
+  - first:
+      213: 6609535301365132654
+    second: Abilities_20
+  - first:
+      213: -2602706537647163771
+    second: Abilities_21
+  - first:
+      213: -544749070851726834
+    second: Abilities_22
+  - first:
+      213: -7654582529394273849
+    second: Abilities_23
+  - first:
+      213: -3190663650718312026
+    second: Abilities_24
+  - first:
+      213: -532840256072788392
+    second: Abilities_25
+  - first:
+      213: -5195102495943494699
+    second: Abilities_26
+  - first:
+      213: -6471406833714932760
+    second: Abilities_27
+  - first:
+      213: -5761105574738654622
+    second: Abilities_28
+  - first:
+      213: -6903911364780733912
+    second: Abilities_29
+  - first:
+      213: -2985571464101903675
+    second: Abilities_30
+  - first:
+      213: -2260724017628715544
+    second: Abilities_31
+  - first:
+      213: -1390690210424506532
+    second: Abilities_32
+  - first:
+      213: 6697851454514198253
+    second: Abilities_33
+  - first:
+      213: 7764690130407379729
+    second: Abilities_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Abilities_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddffce6e30b574d419a3a26cd686ee89
+      internalID: 4773031513114947462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51a18986050e54c93a9c8eb2e65f8d
+      internalID: -1184081909042567840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c8208cb2f60184d9d205182f018d0b
+      internalID: -3594672465257244376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_3
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee966a3647d56f0498b0c5fb103cfb10
+      internalID: -3334098486080132323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5e9f6bedf89fbf448878b029ed9abe8
+      internalID: -7312252029852053250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_5
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a91ef95247cf74e4ba66ef0ffff251b0
+      internalID: -2566087584513626101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_6
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 153
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483c1fe5b1e219c4b81dfe26dae6af3e
+      internalID: -6297846103194970497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_7
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9c4126822b41a84b9d2c93efcfc5ab0
+      internalID: 8721644764572381250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61898cebc2ad504c86c4c46f1d741bd
+      internalID: 4226310092395897613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_9
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950bc562791c967448952d75ba6160a0
+      internalID: 4557577659295867294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_10
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea2a3d2357f79744d809721c8248f76f
+      internalID: 6688456772018066354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_11
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0374bf58c9b32c746a61dbdeae88e14f
+      internalID: 6417038043319163069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_12
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7707b0e6b429842a9ed24fa8099e9a
+      internalID: 7744730106316291705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_13
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 116
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd19080834aaa674889db13b0ca6c825
+      internalID: -7896194131559856813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_14
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d56be9914fe6b548a6e6f5206f8c088
+      internalID: -2703354473452544312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504addbd310b0084fb214f15b289b395
+      internalID: 6973102110618458736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_16
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04967304d2075743b7a2d87aa597a02
+      internalID: -5733100162432585064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_17
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb49547a8515f97458241a7cfbf16ac6
+      internalID: -845441487989709847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_18
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06703f2c692a8fa4294be8fca8c3ecbb
+      internalID: -162489617209041318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_19
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c08a6224d48ae847a4ee9f2903a4152
+      internalID: 168156748368108048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_20
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 79
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc10778e2f3c24e4eaa81bf99810e9a0
+      internalID: 6609535301365132654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_21
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d5a6ed46fe52a94699610099b46eb28
+      internalID: -2602706537647163771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb8858658d372104eb5f0e32b9e770b4
+      internalID: -544749070851726834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_23
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093e06fd22f2347449dd1195048e17b8
+      internalID: -7654582529394273849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_24
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ca37392d740685488e34a137d482a89
+      internalID: -3190663650718312026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_25
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcaaddaded07f8f4fa3e7a4cdf39560c
+      internalID: -532840256072788392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_26
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0c5da6dc01f18478f9205167fc452e
+      internalID: -5195102495943494699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_27
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 42
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5997c34efb36418438475b889e115f3b
+      internalID: -6471406833714932760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_28
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e90b7ac0d9ce12644a678753f0f5d79a
+      internalID: -5761105574738654622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_29
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988bfe4ce5c0a3448aef366cddfe6dab
+      internalID: -6903911364780733912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_30
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73098fd48d36d3f469d43e7a7a816656
+      internalID: -2985571464101903675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_31
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e963dd3df51f7044fbb18972b4f7f1cd
+      internalID: -2260724017628715544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_32
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c74bf5af7042545bf88837f183a5b2
+      internalID: -1390690210424506532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_33
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4acdd4bf66d324846bb518a959db9b6c
+      internalID: 6697851454514198253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Abilities_34
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 5
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5988b0a5f4821004b95cc8c907247a10
+      internalID: 7764690130407379729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

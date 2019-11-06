@@ -16,7 +16,11 @@ public class NetworkManager : SocketIOComponent
         instance = this;
     }
     #endregion
-    
+
+    [SerializeField] TMPro.TMP_InputField input;
+    public Transform redTeamSpawn;
+    public Transform blueTeamSpawn;
+
     public GameObject Player { get; private set; }
 
     public Action<GameObject> onSetup;
@@ -45,9 +49,10 @@ public class NetworkManager : SocketIOComponent
         base.Start();
         On("setup", (SocketIOEvent e) =>
         {
-            var behaviour = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity).GetComponent<NetworkIdentity>();
+            var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
             behaviour.setIsLocal(true);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
+            behaviour.GetComponent<Character_Controller>().isRedTeam = e.data["isRedTeam"].b;
             Player = behaviour.gameObject;
             Camera.main.GetComponent<Camera_Movement>().target = behaviour.transform;
             onSetup.Invoke(behaviour.gameObject);
@@ -55,10 +60,13 @@ public class NetworkManager : SocketIOComponent
 
         On("new player setup", (SocketIOEvent e) =>
         {
-            Debug.Log("New Player joined! " + e.data["position"].ToString());
-            var behaviour = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity).GetComponent<NetworkIdentity>();
+            Debug.Log("New Player joined! " + e.data["isRedTeam"].b);
+            var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
             behaviour.setIsLocal(false);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
+            var controller = behaviour.GetComponent<Character_Controller>();
+            controller.isRedTeam = e.data["isRedTeam"].b;
+            controller.Setup(Player.GetComponent<Character_Controller>().isRedTeam != controller.isRedTeam);
             Vector3 pos = GetVectorFromData(e.data["position"]);
             Vector3 rot = GetVectorFromData(e.data["rotation"]);
             Debug.Log(pos + " " + rot);
@@ -117,7 +125,7 @@ public class NetworkManager : SocketIOComponent
                 {
                     if (item.name == e.data["abilityID"].ToString().RemoveQuotations())
                     {
-                        item.Use(e.data["id"].ToString().RemoveQuotations());
+                        item.Use(e.data["id"].ToString().RemoveQuotations(), GetVectorFromData(e.data["position"]));
                         break;
                     }
                 }
@@ -139,6 +147,13 @@ public class NetworkManager : SocketIOComponent
         });
     }
 
+    public override void Update()
+    {
+        base.Update();
+        url = "ws://" + input.text + ":4567/socket.io/?EIO=4&transport=websocket";
+        
+    }
+
     public Vector3 GetVectorFromData(JSONObject e)
     {
         float x = float.Parse(e["x"].ToString())/1000f;
@@ -146,6 +161,5 @@ public class NetworkManager : SocketIOComponent
         float z = float.Parse(e["z"].ToString())/1000f;
         return new Vector3(x, y, z);
     }
-
     
 }

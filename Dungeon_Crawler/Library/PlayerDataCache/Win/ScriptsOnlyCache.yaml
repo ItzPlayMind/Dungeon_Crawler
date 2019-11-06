@@ -2,6 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Ability_Display
+    - Ability_Display_Panel
+    - Ability_Slot_Prefab
     - Camera_Movement
     - Character_Ability
     - Character_Controller
@@ -20,6 +22,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.RenderObjects
     - UnityEngine.Rendering.LWRP.ForwardRendererData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
+    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -39,7 +42,10 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -85,53 +91,63 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9800}
+      Script: {instanceID: 9822}
     - Class: 114
-      Script: {instanceID: 9940}
+      Script: {instanceID: 9968}
     - Class: 114
-      Script: {instanceID: 10194}
+      Script: {instanceID: 10226}
     - Class: 114
-      Script: {instanceID: 10368}
+      Script: {instanceID: 10400}
     - Class: 114
-      Script: {instanceID: 10816}
+      Script: {instanceID: 10718}
     - Class: 114
-      Script: {instanceID: 10888}
+      Script: {instanceID: 10760}
     - Class: 114
-      Script: {instanceID: 10922}
+      Script: {instanceID: 10862}
     - Class: 114
       Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 11040}
+      Script: {instanceID: 10968}
     - Class: 114
-      Script: {instanceID: 11328}
+      Script: {instanceID: 10980}
     - Class: 114
-      Script: {instanceID: 11490}
+      Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11732}
+      Script: {instanceID: 11240}
     - Class: 114
-      Script: {instanceID: 11864}
+      Script: {instanceID: 11382}
     - Class: 114
-      Script: {instanceID: 11888}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11964}
+      Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11984}
+      Script: {instanceID: 11760}
     - Class: 114
-      Script: {instanceID: 12148}
+      Script: {instanceID: 11800}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 11932}
     - Class: 114
-      Script: {instanceID: 12294}
+      Script: {instanceID: 11958}
     - Class: 114
-      Script: {instanceID: 12704}
+      Script: {instanceID: 12032}
     - Class: 114
-      Script: {instanceID: 13070}
+      Script: {instanceID: 12036}
     - Class: 114
-      Script: {instanceID: 13196}
+      Script: {instanceID: 12056}
     - Class: 114
-      Script: {instanceID: 28446}
+      Script: {instanceID: 12226}
     - Class: 114
-      Script: {instanceID: 35554}
+      Script: {instanceID: 12244}
+    - Class: 114
+      Script: {instanceID: 12378}
+    - Class: 114
+      Script: {instanceID: 12492}
+    - Class: 114
+      Script: {instanceID: 12798}
+    - Class: 114
+      Script: {instanceID: 13164}
+    - Class: 114
+      Script: {instanceID: 13292}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -187,6 +203,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: c57b959901196970c63cf527ede20d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stunned
   - hash:
       serializedVersion: 2
       Hash: 8c328a0ffa03c1bcb9332bb39f4f8453
@@ -399,6 +421,12 @@ ScriptsOnlyBuild:
     className: LWRPAdditionalCameraData
   - hash:
       serializedVersion: 2
+      Hash: 3d423be9991a149621f968f5492f3171
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ability_Slot_Prefab
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -411,7 +439,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 6089ca458871df9f37a74b25239916c2
+      Hash: 79c486ea0fe78daf375df664d26e0964
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Skill
@@ -435,7 +463,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 70451bc79da1bc72f9bffcc9cdd01880
+      Hash: 3d638f6ba5e1ebb7d366bcf96dcf427e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Camera_Movement
@@ -459,7 +487,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 1a01ebedf90acbfcee2b08332ed3dacf
+      Hash: 4cfad984cae977af5ca07d4c6fa7a9cc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillData
@@ -475,6 +503,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Rendering.LWRP
     className: LightweightRenderPipelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 46829583e8fe72d46b500baf2fcefae8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ability_Display_Panel
   - hash:
       serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
@@ -495,7 +529,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 6f76589d211e144a24289f4cc6629fa9
+      Hash: 821bcb95185daeaa2aa5bf68cb01bb66
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Character_Controller
@@ -505,6 +539,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.AI
     className: NavMeshModifier
+  - hash:
+      serializedVersion: 2
+      Hash: c57b959901196970c63cf527ede20d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BaseEffect
   - hash:
       serializedVersion: 2
       Hash: d6fc8d3165070298511ec776ea575626
@@ -555,6 +595,12 @@ ScriptsOnlyBuild:
     className: PostProcessDebug
   - hash:
       serializedVersion: 2
+      Hash: 7ab7df2e0ea30a70f0549fc2c5ec0e71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkTrigger
+  - hash:
+      serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -577,6 +623,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 89b3d826f3abe638809f285b410f746b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HealthBar
   - hash:
       serializedVersion: 2
       Hash: 0c6ace239b6c39a996826c3371c23a48
@@ -669,7 +721,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 43ba05b59ffe8bf52d68eb2ccea71bfd
+      Hash: 52aedcd3b3cd697f06708332ea713934
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -865,31 +917,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 7ab7df2e0ea30a70f0549fc2c5ec0e71
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NetworkTrigger
-  - hash:
-      serializedVersion: 2
-      Hash: c57b959901196970c63cf527ede20d7d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BaseEffect
-  - hash:
-      serializedVersion: 2
-      Hash: c57b959901196970c63cf527ede20d7d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Stunned
-  - hash:
-      serializedVersion: 2
-      Hash: 89b3d826f3abe638809f285b410f746b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HealthBar
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
+  m_Name: Jump Drop
+  m_EditorClassIdentifier: 
+  damage: 15
+  manaCost: 15
+  cooldown: 5
+  onUseMethodName: JumpDropUse
+  onUseData: {fileID: 11400000, guid: 09690bd44a02ac047977d07660d4efd5, type: 2}
+  onHitMethodName: 
+  onHitData: {fileID: 0}
+  onDisplayMethodName: CircleCircleAttack
+  onDisplayData: {fileID: 11400000, guid: 833f59e7871713e4786110548daa5b9a, type: 2}
+  icon: {fileID: -845441487989709847, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}

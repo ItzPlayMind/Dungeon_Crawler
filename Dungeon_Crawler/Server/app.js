@@ -9,6 +9,8 @@ var sockets = [];
 
 var connectedAmount = 0;
 
+var redTeam = false;
+
 io.on("connection", (socket) => {
     console.log("New Client connected!");
 
@@ -19,7 +21,10 @@ io.on("connection", (socket) => {
     players[thisPlayerID] = player;
     sockets[thisPlayerID] = socket;
 
-    socket.emit("setup", { id: thisPlayerID });//Tell myself to Spawn!
+    player.isRedTeam = redTeam;
+    redTeam = !redTeam;
+    
+    socket.emit("setup", { id: thisPlayerID, isRedTeam: player.isRedTeam });//Tell myself to Spawn!
     socket.broadcast.emit("new player setup", player);//Tell everyone I spawned!
 
     //Tell myself who is already in game!
@@ -49,6 +54,7 @@ io.on("connection", (socket) => {
     });
 
     socket.on("disconnect", (socket) => {
+        redTeam = players[thisPlayerID].isRedTeam;
         console.log("Client disconnected!");
         connectedAmount--;
         delete players[thisPlayerID];

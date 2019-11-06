@@ -11,8 +11,8 @@ public class Skill : ScriptableObject
 {
     public float damage;
     public float manaCost;
-    public float range;
     public float cooldown;
+    float countdown;
     [Header("On Use Method")]
     public string onUseMethodName;
     public SkillData onUseData;
@@ -21,11 +21,29 @@ public class Skill : ScriptableObject
     public string onHitMethodName;
     public SkillData onHitData;
 
-    public void Use(string id)
+    [Header("On Display Method")]
+    public string onDisplayMethodName;
+    public SkillData onDisplayData;
+
+    [Header("UI")]
+    public Sprite icon;
+
+    public bool CanUse { get => countdown <= 0; }
+    public float getTime { get => countdown; }
+
+    public void Display(Vector3 mousePosition, Vector3 dir, Vector3 center, Ability_Display display)
     {
         Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
         Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
-        assembly.GetType("ScriptSkills").GetMethod(onUseMethodName).Invoke(null, new object[] { onUseData, id, this});
+        assembly.GetType("ScriptSkills").GetMethod(onDisplayMethodName).Invoke(null, new object[] { onDisplayData, mousePosition, dir, center, display });
+    }
+
+    public void Use(string id, Vector3 position)
+    {
+        Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+        Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
+        assembly.GetType("ScriptSkills").GetMethod(onUseMethodName).Invoke(null, new object[] { onUseData, id, position,this});
+        countdown = cooldown;
     }
 
     public void OnHit(GameObject target, GameObject user)
@@ -33,6 +51,14 @@ public class Skill : ScriptableObject
         Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
         Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
         assembly.GetType("ScriptSkills").GetMethod(onHitMethodName).Invoke(null, new object[] { onUseData, user, target, this });
+    }
+
+    public void Cooldown()
+    {
+        if (countdown >= 0)
+        {
+            countdown -= Time.deltaTime;
+        }
     }
 
     public Skill Copy()
@@ -45,8 +71,11 @@ public class Skill : ScriptableObject
         skill.onUseMethodName = onUseMethodName;
         skill.onHitData = onHitData;
         skill.onHitMethodName = onHitMethodName;
-        skill.range = range;
         skill.cooldown = cooldown;
+        skill.countdown = countdown;
+        skill.icon = icon;
+        skill.onDisplayMethodName = onDisplayMethodName;
+        skill.onDisplayData = onDisplayData;
         return skill;
     }
 }
