@@ -18,10 +18,13 @@ public class Character_Controller : NetworkBehaviour
 
     public void Setup(bool notSameTeam)
     {
-        if (!isLocal)
+        if (notSameTeam)
         {
-            fieldOfView.gameObject.SetActive(false);
-            GetComponentInChildren<Renderer>().material.color = new Color(1, 0, 0, 1);
+            if (!isLocal)
+            {
+                fieldOfView.gameObject.SetActive(false);
+                GetComponentInChildren<Renderer>().material.color = new Color(1, 0, 0, 1);
+            }
         }
     }
 
@@ -45,15 +48,19 @@ public class Character_Controller : NetworkBehaviour
             if (Vector3.Distance(target.transform.position, transform.position) <= ownStats.GetStat("Attack Range").value)
             {
                 target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value);
-                JSONObject obj = new JSONObject();
-                Debug.Log(target.GetComponent<NetworkIdentity>().ID);
-                obj.AddField("id", target.GetComponent<NetworkIdentity>().ID.ToString());
-                obj.AddField("damage", ownStats.GetStat("Attack Damage").value);
-                obj.Bake();
-                NetworkManager.instance.Emit("damage", obj);
+                SendAttackDamage(ownStats.GetStat("Attack Damage").value,target);
             }
         }
         canAttack = true;
+    }
+
+    public void SendAttackDamage(float damage, GameObject target)
+    {
+        JSONObject obj = new JSONObject();
+        Debug.Log(target.GetComponent<NetworkIdentity>().ID);
+        obj.AddField("id", target.GetComponent<NetworkIdentity>().ID.ToString());
+        obj.AddField("damage", damage);
+        NetworkManager.instance.Emit("damage", obj);
     }
 
     void Update()

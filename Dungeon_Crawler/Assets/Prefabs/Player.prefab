@@ -282,7 +282,7 @@ MonoBehaviour:
   skills:
   - {fileID: 11400000, guid: fdde1d4a3e7aba14f8aebef43d12877a, type: 2}
   - {fileID: 11400000, guid: bb018c584c3035e4898d97b13a6a5e56, type: 2}
-  - {fileID: 11400000, guid: fdde1d4a3e7aba14f8aebef43d12877a, type: 2}
+  - {fileID: 11400000, guid: 03a3d3b96182bf3469801fd796466dd2, type: 2}
 --- !u!114 &5860469657680023509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -624,6 +624,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 839994776410720053, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 839994776410720053, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 839994776410720053, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723238550596212600, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723238550596212600, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.4716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723238550596212600, guid: f240944d103c18448b200fe6dc79124f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4716981
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f240944d103c18448b200fe6dc79124f, type: 3}

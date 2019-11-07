@@ -25,6 +25,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
+    - TMPro.TMP_InputField
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
@@ -41,11 +42,14 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -95,9 +99,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9968}
     - Class: 114
+      Script: {instanceID: 10144}
+    - Class: 114
       Script: {instanceID: 10226}
     - Class: 114
+      Script: {instanceID: 10264}
+    - Class: 114
       Script: {instanceID: 10400}
+    - Class: 114
+      Script: {instanceID: 10582}
     - Class: 114
       Script: {instanceID: 10718}
     - Class: 114
@@ -120,6 +130,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11550}
     - Class: 114
       Script: {instanceID: 11632}
+    - Class: 114
+      Script: {instanceID: 11672}
     - Class: 114
       Script: {instanceID: 11760}
     - Class: 114
@@ -439,7 +451,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 79c486ea0fe78daf375df664d26e0964
+      Hash: a38f28428050391e9a8de0d4ccb55d0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Skill
@@ -721,7 +733,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 52aedcd3b3cd697f06708332ea713934
+      Hash: 8f4ff8a6eb3401c5ae42d8f3e31d618e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -917,7 +929,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: c57b959901196970c63cf527ede20d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Airborne
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe

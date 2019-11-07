@@ -30,7 +30,9 @@ public class Stunned : BaseEffect
     {
         bar.ToggleEffectDisplay(false);
         if (GetComponent<NavMeshAgent>() != null)
+        {
             GetComponent<NavMeshAgent>().enabled = true;
+        }
         if (GetComponent<Character_Controller>() != null)
             GetComponent<Character_Controller>().enabled = true;
         if (GetComponent<Character_Ability>() != null)

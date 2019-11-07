@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
-  m_Name: Jump Drop
+  m_Name: Flying Knife
   m_EditorClassIdentifier: 
   damage: 15
-  manaCost: 15
+  manaCost: 35
   cooldown: 5
-  onUseMethodName: JumpDropUse
-  onUseData: {fileID: 11400000, guid: 09690bd44a02ac047977d07660d4efd5, type: 2}
-  onHitMethodName: 
+  level: 0
+  onUseMethodName: FlyingKnifeUse
+  onUseData: {fileID: 11400000, guid: ec982e6e6fe304c48b78176cd4a01bbd, type: 2}
+  onHitMethodName: FlyingKnifeHit
   onHitData: {fileID: 0}
-  onDisplayMethodName: CircleCircleAttack
-  onDisplayData: {fileID: 11400000, guid: 833f59e7871713e4786110548daa5b9a, type: 2}
-  icon: {fileID: -845441487989709847, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
+  onDisplayMethodName: RangeAttackDisplay
+  onDisplayData: {fileID: 11400000, guid: c294fef68940eaf4181b2dc53694f591, type: 2}
+  icon: {fileID: 4773031513114947462, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}

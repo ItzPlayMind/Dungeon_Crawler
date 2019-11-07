@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed84118e0405c247aebbadb34040c02, type: 3}
   m_Name: Attack Speed
   m_EditorClassIdentifier: 
-  id: Stat4
-  value: 1
+  value: 0.5

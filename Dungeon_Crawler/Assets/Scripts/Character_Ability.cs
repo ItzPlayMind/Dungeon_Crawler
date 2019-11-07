@@ -32,6 +32,7 @@ public class Character_Ability : NetworkBehaviour
 
     Skill activeSkill = null;
 
+    Vector3 destinationPos = Vector3.zero;
     // Update is called once per frame
     void Update()
     {
@@ -39,32 +40,32 @@ public class Character_Ability : NetworkBehaviour
         {
             Vector3 dir = (mouseWorldPosition() - transform.position);
             dir.y = 0;
-            if (Input.GetKey(KeyCode.Alpha1))
+            if (Input.GetKey(KeyCode.Q))
             {
                 if (skills[0].CanUse)
                 {
                     //display.DisplayRangedAttack(transform.position + Vector3.up * 0.1f, dir.normalized, skills[0].range, 2f);
-                    skills[0].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    destinationPos = skills[0].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
                     activeSkill = skills[0];
                     agent.SetDestination(transform.position);
                     transform.rotation = Quaternion.LookRotation(dir.normalized);
                 }
             }
-            else if (Input.GetKey(KeyCode.Alpha2))
+            else if (Input.GetKey(KeyCode.W))
             {
                 if (skills[1].CanUse)
                 {
-                    skills[1].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    destinationPos = skills[1].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
                     activeSkill = skills[1];
                     agent.SetDestination(transform.position);
                     transform.rotation = Quaternion.LookRotation(dir.normalized);
                 }
             }
-            else if (Input.GetKey(KeyCode.Alpha3))
+            else if (Input.GetKey(KeyCode.E))
             {
                 if (skills[2].CanUse)
                 {
-                    skills[2].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
+                    destinationPos = skills[2].Display(mouseWorldPosition(), dir.normalized, transform.position + Vector3.up * 0.1f, display);
                     activeSkill = skills[2];
                     agent.SetDestination(transform.position);
                     transform.rotation = Quaternion.LookRotation(dir.normalized);
@@ -78,12 +79,13 @@ public class Character_Ability : NetworkBehaviour
             {
                 if (activeSkill != null)
                 {
-                    activeSkill.Use(ID,mouseWorldPosition());
+                    activeSkill.Use(ID, destinationPos);
                     JSONObject Jobj = new JSONObject();
                     Jobj.AddField("id", ID);
                     Jobj.AddField("abilityID", activeSkill.name.RemoveQuotations());
-                    Jobj.AddField("position", mouseWorldPosition().convertToJson());
+                    Jobj.AddField("position", destinationPos.convertToJson());
                     NetworkManager.instance.Emit("use ability", Jobj);
+                    destinationPos = Vector3.zero;
                 }
                 display.ResetDisplay();
                 activeSkill = null;

@@ -49,7 +49,7 @@ public class NetworkManager : SocketIOComponent
         base.Start();
         On("setup", (SocketIOEvent e) =>
         {
-            var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
+            var behaviour = Instantiate(playerPrefab, redTeamSpawn.position /*e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position*/, Quaternion.identity).GetComponent<NetworkIdentity>();
             behaviour.setIsLocal(true);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
             behaviour.GetComponent<Character_Controller>().isRedTeam = e.data["isRedTeam"].b;
@@ -61,15 +61,15 @@ public class NetworkManager : SocketIOComponent
         On("new player setup", (SocketIOEvent e) =>
         {
             Debug.Log("New Player joined! " + e.data["isRedTeam"].b);
-            var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
+            var behaviour = Instantiate(playerPrefab, redTeamSpawn.position /*e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position*/, Quaternion.identity).GetComponent<NetworkIdentity>();
             behaviour.setIsLocal(false);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
             var controller = behaviour.GetComponent<Character_Controller>();
             controller.isRedTeam = e.data["isRedTeam"].b;
+            Debug.Log(controller.isRedTeam + " " + Player.GetComponent<Character_Controller>().isRedTeam);
             controller.Setup(Player.GetComponent<Character_Controller>().isRedTeam != controller.isRedTeam);
             Vector3 pos = GetVectorFromData(e.data["position"]);
             Vector3 rot = GetVectorFromData(e.data["rotation"]);
-            Debug.Log(pos + " " + rot);
             behaviour.transform.position = pos;
             behaviour.transform.eulerAngles = rot;
         });
@@ -146,12 +146,10 @@ public class NetworkManager : SocketIOComponent
             }
         });
     }
-
     public override void Update()
     {
         base.Update();
         url = "ws://" + input.text + ":4567/socket.io/?EIO=4&transport=websocket";
-        
     }
 
     public Vector3 GetVectorFromData(JSONObject e)
@@ -160,6 +158,11 @@ public class NetworkManager : SocketIOComponent
         float y = float.Parse(e["y"].ToString())/1000f;
         float z = float.Parse(e["z"].ToString())/1000f;
         return new Vector3(x, y, z);
+    }
+
+    public void BtnConnect()
+    {
+        Connect();
     }
     
 }

@@ -12,6 +12,7 @@ public class Skill : ScriptableObject
     public float damage;
     public float manaCost;
     public float cooldown;
+    public float level;
     float countdown;
     [Header("On Use Method")]
     public string onUseMethodName;
@@ -31,11 +32,11 @@ public class Skill : ScriptableObject
     public bool CanUse { get => countdown <= 0; }
     public float getTime { get => countdown; }
 
-    public void Display(Vector3 mousePosition, Vector3 dir, Vector3 center, Ability_Display display)
+    public Vector3 Display(Vector3 mousePosition, Vector3 dir, Vector3 center, Ability_Display display)
     {
         Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
         Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptSkills", false) != null);
-        assembly.GetType("ScriptSkills").GetMethod(onDisplayMethodName).Invoke(null, new object[] { onDisplayData, mousePosition, dir, center, display });
+        return (Vector3)assembly.GetType("ScriptSkills").GetMethod(onDisplayMethodName).Invoke(null, new object[] { onDisplayData, mousePosition, dir, center, display });
     }
 
     public void Use(string id, Vector3 position)

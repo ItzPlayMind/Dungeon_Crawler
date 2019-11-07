@@ -15,3 +15,4 @@ MonoBehaviour:
   id: FKAbilityData1
   objects:
   - {fileID: 8532859303036425440, guid: e52fce7fc7aa9cd4e9c074832e045767, type: 3}
+  floats: []
