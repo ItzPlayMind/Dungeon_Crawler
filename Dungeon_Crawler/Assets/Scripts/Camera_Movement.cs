@@ -31,8 +31,11 @@ public class Camera_Movement : MonoBehaviour
         }
         if (locked)
         {
-            transform.LookAt(target);
-            transform.position = target.position + offset;
+            if (target != null)
+            {
+                transform.LookAt(target);
+                transform.position = target.position + offset;
+            }
         }
         else
         {

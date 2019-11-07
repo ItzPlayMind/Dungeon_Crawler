@@ -198,7 +198,7 @@ NavMeshAgent:
   m_Speed: 5
   m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 300
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -302,6 +302,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0b4a4863f8274f4c8e6b31ede82f7a1, type: 2}
   - {fileID: 11400000, guid: 42bfa61a954407f47952c187e1af58e1, type: 2}
   - {fileID: 11400000, guid: 668aaffda7f831c43a6bfbe3354f8e3b, type: 2}
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   healthbar: {fileID: 5934099444869700991}
 --- !u!1 &3931175999840184999
 GameObject:

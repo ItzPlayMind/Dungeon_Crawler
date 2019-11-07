@@ -170,7 +170,16 @@ namespace SocketIO
 		
 		public void Connect()
 		{
-			connected = true;
+            ws = new WebSocket(url);
+            ws.OnOpen += OnOpen;
+            ws.OnMessage += OnMessage;
+            ws.OnError += OnError;
+            ws.OnClose += OnClose;
+
+            if (socketThread != null) { socketThread.Abort(); }
+            if (pingThread != null) { pingThread.Abort(); }
+
+            connected = true;
 
 			socketThread = new Thread(RunSocketThread);
 			socketThread.Start(ws);

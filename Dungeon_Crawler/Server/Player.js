@@ -6,6 +6,10 @@ module.exports = class Player{
         this.id = shortID.generate();
         this.position = new Vector3(0, 0, 0);
         this.rotation = new Vector3(0, 0, 0);
+        this.items = [];
+        for (var i = 0; i < 6; i++) {
+            this.items.push("");
+        }
         this.isRedTeam = false;
     }
 }

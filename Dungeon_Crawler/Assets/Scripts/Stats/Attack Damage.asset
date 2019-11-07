@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed84118e0405c247aebbadb34040c02, type: 3}
   m_Name: Attack Damage
   m_EditorClassIdentifier: 
-  id: Stat2
   value: 10

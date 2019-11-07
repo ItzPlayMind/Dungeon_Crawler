@@ -11,6 +11,9 @@ ScriptsOnlyBuild:
     - FieldOfView
     - Flying_Object
     - HealthBar
+    - Item
+    - Item_Panel_Prefab
+    - Item_Shop
     - NetworkIdentity
     - NetworkManager
     - NetworkTrigger
@@ -44,11 +47,15 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
@@ -101,11 +108,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10144}
     - Class: 114
+      Script: {instanceID: 10148}
+    - Class: 114
       Script: {instanceID: 10226}
     - Class: 114
       Script: {instanceID: 10264}
     - Class: 114
+      Script: {instanceID: 10322}
+    - Class: 114
       Script: {instanceID: 10400}
+    - Class: 114
+      Script: {instanceID: 10402}
     - Class: 114
       Script: {instanceID: 10582}
     - Class: 114
@@ -124,6 +137,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11088}
     - Class: 114
       Script: {instanceID: 11240}
+    - Class: 114
+      Script: {instanceID: 11308}
     - Class: 114
       Script: {instanceID: 11382}
     - Class: 114
@@ -155,11 +170,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12492}
     - Class: 114
-      Script: {instanceID: 12798}
+      Script: {instanceID: 12800}
     - Class: 114
-      Script: {instanceID: 13164}
+      Script: {instanceID: 13166}
     - Class: 114
-      Script: {instanceID: 13292}
+      Script: {instanceID: 13294}
+    - Class: 114
+      Script: {instanceID: 31288}
+    - Class: 114
+      Script: {instanceID: 63770}
+    - Class: 114
+      Script: {instanceID: 63776}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -169,6 +190,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 195
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -667,7 +692,7 @@ ScriptsOnlyBuild:
     className: Flying_Object
   - hash:
       serializedVersion: 2
-      Hash: 623b1df6e56db82f4f35735149f4dfc9
+      Hash: aa49af42fdc44636aa20efd894da3639
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Character_Stats
@@ -779,6 +804,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: c57b959901196970c63cf527ede20d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Airborne
   - hash:
       serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
@@ -931,11 +962,29 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: c57b959901196970c63cf527ede20d7d
+      Hash: 85d2ad2ee121cc9bd1657296fc263689
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Airborne
+    className: Item
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptItems
+  - hash:
+      serializedVersion: 2
+      Hash: 5f66a77405d084d69ed0abe6f7fcfc44
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item_Panel_Prefab
+  - hash:
+      serializedVersion: 2
+      Hash: 1bb5dc9d21316dd94d7b53ee3ff658fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item_Shop
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
