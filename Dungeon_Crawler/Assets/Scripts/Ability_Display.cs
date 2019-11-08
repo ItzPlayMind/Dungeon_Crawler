@@ -23,6 +23,7 @@ public class Ability_Display : MonoBehaviour
         if (display == null)
         {
             display = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            display.layer = LayerMask.NameToLayer("RenderOnTop");
             //display.layer = LayerMask.NameToLayer("Mask");
             DestroyImmediate(display.GetComponent<Collider>());
         }

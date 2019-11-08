@@ -68,7 +68,9 @@
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\Ability_Display.cs" />
     <Compile Include="Assets\Scripts\Ability_Display_Panel.cs" />
+    <Compile Include="Assets\Scripts\Ability_Selector.cs" />
     <Compile Include="Assets\Scripts\Ability_Slot_Prefab.cs" />
+    <Compile Include="Assets\Scripts\AbilityBTN_Prefab.cs" />
     <Compile Include="Assets\Scripts\Camera_Movement.cs" />
     <Compile Include="Assets\Scripts\Character_Ability.cs" />
     <Compile Include="Assets\Scripts\Character_Controller.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="Assets\Scripts\Effects\Airborne.cs" />
     <Compile Include="Assets\Scripts\Effects\BaseEffect.cs" />
     <Compile Include="Assets\Scripts\Effects\Stunned.cs" />
+    <Compile Include="Assets\Scripts\Effects\TrueSight.cs" />
     <Compile Include="Assets\Scripts\ExtensionMethods.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Scripts\Flying_Object.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Assets\Scripts\Skills\ScriptSkills.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillData.cs" />
+    <Compile Include="Assets\Scripts\Stat_Display.cs" />
     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONTemplates.cs" />
@@ -173,7 +177,6 @@
     <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketFrame.cs" />
     <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketState.cs" />
     <Compile Include="Assets\SocketIO\WebsocketSharp\WebSocketStream.cs" />
-    <Compile Include="Assets\Stat_Display.cs" />
     <None Include="Assets\SocketIO\JSONObject\readme.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

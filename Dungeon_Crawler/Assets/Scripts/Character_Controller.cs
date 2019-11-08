@@ -15,6 +15,7 @@ public class Character_Controller : NetworkBehaviour
     Character_Stats ownStats;
 
     [SerializeField] private Ability_Display ability_Display;
+    
 
     public void Setup(bool notSameTeam)
     {
@@ -23,7 +24,6 @@ public class Character_Controller : NetworkBehaviour
             if (!isLocal)
             {
                 fieldOfView.gameObject.SetActive(false);
-                GetComponentInChildren<Renderer>().material.color = new Color(1, 0, 0, 1);
             }
         }
     }
@@ -50,6 +50,9 @@ public class Character_Controller : NetworkBehaviour
                 if(target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value))
                 {
                     ownStats.GetStat("Gold").value += 100;
+                    JSONObject obj = new JSONObject();
+                    obj.AddField("isRedTeam", isRedTeam);
+                    NetworkManager.instance.Emit("kill player",obj);
                 }
                 SendAttackDamage(ownStats.GetStat("Attack Damage").value,target);
             }

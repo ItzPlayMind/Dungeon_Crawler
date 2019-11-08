@@ -19,9 +19,9 @@ TagManager:
   - Black
   - BehindMaskUI
   - Ground
-  - 
-  - 
-  - 
+  - DoNotRenderOnMiniMap
+  - RenderOnTopOfMiniMap
+  - RenderOnTop
   - 
   - 
   - 

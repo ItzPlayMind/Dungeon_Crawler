@@ -27,8 +27,10 @@ public class NetworkManager : SocketIOComponent
 
     public GameObject playerPrefab;
 
-    public List<NetworkScriptableObject> networkScriptableObjects = new List<NetworkScriptableObject>();
+    [HideInInspector]public Skill[] abilitiesForSpawn = new Skill[3];
 
+    [SerializeField] TMPro.TextMeshProUGUI redScoreText;
+    [SerializeField] TMPro.TextMeshProUGUI blueScoreText;
 
     public GameObject GetPlayerByID(string userID)
     {
@@ -51,11 +53,27 @@ public class NetworkManager : SocketIOComponent
         On("setup", (SocketIOEvent e) =>
         {
             var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
+            /*if (!e.data["isRedTeam"].b)
+            {
+                redTeamSpawn.GetChild(0).gameObject.SetActive(false);
+            }
+            else
+            {
+                blueTeamSpawn.GetChild(0).gameObject.SetActive(false);
+            }*/
             behaviour.setIsLocal(true);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
             behaviour.GetComponent<Character_Controller>().isRedTeam = e.data["isRedTeam"].b;
             Player = behaviour.gameObject;
             Camera.main.GetComponent<Camera_Movement>().target = behaviour.transform;
+            behaviour.GetComponent<Character_Ability>().skills = abilitiesForSpawn;
+            JSONObject obj = new JSONObject();
+            obj.AddField("id", behaviour.ID);
+            for (int i = 0; i < abilitiesForSpawn.Length; i++)
+            {
+                obj.AddField("ability" + i, abilitiesForSpawn[i].name);
+            }
+            Emit("change abilities", obj);
             onSetup.Invoke(behaviour.gameObject);
         });
 
@@ -75,7 +93,12 @@ public class NetworkManager : SocketIOComponent
             {
                 items.Add(Item_Shop.instance.allItems.Find(x => x.name == item.ToString().RemoveQuotations())?.Copy());
             }
-            behaviour.GetComponent<Character_Stats>().SetItems(items.ToArray());
+            List<Skill> skills = new List<Skill>();
+            foreach (var skill in e.data["skills"].list)
+            {
+                skills.Add(Ability_Selector.instance.allSkills.Find(x => x.name == skill.ToString().RemoveQuotations())?.Copy());
+            }
+            behaviour.GetComponent<Character_Ability>().skills = skills.ToArray();
             Vector3 pos = GetVectorFromData(e.data["position"]);
             Vector3 rot = GetVectorFromData(e.data["rotation"]);
             behaviour.transform.position = pos;
@@ -154,6 +177,12 @@ public class NetworkManager : SocketIOComponent
             }
         });
 
+        On("update score", (SocketIOEvent e) =>
+        {
+            redScoreText.text = e.data["redScore"].f + "";
+            blueScoreText.text = e.data["blueScore"].f + "";
+        });
+
         On("change item", (SocketIOEvent e) =>
         {
             var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
@@ -170,6 +199,27 @@ public class NetworkManager : SocketIOComponent
                     }
                     Debug.Log(string.Join(",", items));
                     entity.GetComponent<Character_Stats>().SetItems(items.ToArray());
+                    break;
+                }
+            }
+        });
+
+        On("change abilities", (SocketIOEvent e) =>
+        {
+            var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
+            //Debug.Log(e.data["id"].ToString().RemoveQuotations() + " took " + e.data["damage"].ToString() + " Damage from " + e.data["attackerID"].ToString().RemoveQuotations());
+            foreach (var entity in behaviours)
+            {
+                if (entity.ID == e.data["id"].ToString().RemoveQuotations())
+                {
+                    Debug.Log("Change Abilities from " + entity.ID);
+                    List<Skill> items = new List<Skill>();
+                    foreach (var item in e.data["skills"].list)
+                    {
+                        items.Add(Ability_Selector.instance.allSkills.Find(x => x.name == item.ToString().RemoveQuotations())?.Copy());
+                    }
+                    Debug.Log(string.Join(",", items));
+                    entity.GetComponent<Character_Ability>().skills = items.ToArray();
                     break;
                 }
             }

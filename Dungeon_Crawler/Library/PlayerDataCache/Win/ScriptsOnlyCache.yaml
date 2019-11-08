@@ -1,8 +1,10 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AbilityBTN_Prefab
     - Ability_Display
     - Ability_Display_Panel
+    - Ability_Selector
     - Ability_Slot_Prefab
     - Camera_Movement
     - Character_Ability
@@ -163,30 +165,36 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12012}
+      Script: {instanceID: 11982}
     - Class: 114
-      Script: {instanceID: 12042}
+      Script: {instanceID: 12014}
     - Class: 114
-      Script: {instanceID: 12046}
+      Script: {instanceID: 12044}
     - Class: 114
-      Script: {instanceID: 12066}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12236}
+      Script: {instanceID: 12068}
     - Class: 114
-      Script: {instanceID: 12254}
+      Script: {instanceID: 12238}
     - Class: 114
-      Script: {instanceID: 12388}
+      Script: {instanceID: 12256}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12390}
     - Class: 114
-      Script: {instanceID: 12810}
+      Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 12634}
     - Class: 114
-      Script: {instanceID: 13304}
+      Script: {instanceID: 12814}
+    - Class: 114
+      Script: {instanceID: 13180}
+    - Class: 114
+      Script: {instanceID: 13308}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -527,7 +535,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 4cfad984cae977af5ca07d4c6fa7a9cc
+      Hash: 8fec8c34a943100b8f6dc4e69e555ad8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillData
@@ -587,7 +595,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 821bcb95185daeaa2aa5bf68cb01bb66
+      Hash: 6c0c3a6b751d46ef47bddb7771332e08
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Character_Controller
@@ -725,6 +733,12 @@ ScriptsOnlyBuild:
     className: Character_Stats
   - hash:
       serializedVersion: 2
+      Hash: 788f15d620184b41cffa40ccbd0707bc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ability_Selector
+  - hash:
+      serializedVersion: 2
       Hash: 12e64d607873da15ad3f833620350d51
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -791,7 +805,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 8f4ff8a6eb3401c5ae42d8f3e31d618e
+      Hash: 7c0845039122848ff751e059a4eccc4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -849,6 +863,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 53d7986edc41c9cf3c2d3aa9b0b537e1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AbilityBTN_Prefab
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -993,6 +1013,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f75a11aa540353aa9750322528763d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TrueSight
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

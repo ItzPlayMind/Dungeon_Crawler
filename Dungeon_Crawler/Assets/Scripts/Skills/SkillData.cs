@@ -7,4 +7,5 @@ public class SkillData : NetworkScriptableObject
 {
     public GameObject[] objects;
     public float[] floats;
+    public Material[] materials;
 }

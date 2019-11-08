@@ -18,11 +18,10 @@ public class Character_Ability : NetworkBehaviour
 
         ownStats = GetComponent<Character_Stats>();
         agent = GetComponent<NavMeshAgent>();
-        for (int i = 0; i < skills.Length; i++)
+        /*for (int i = 0; i < skills.Length; i++)
         {
             skills[i] = (Skill)skills[i].Copy();
-        }
-
+        }*/
         if (isLocal)
         {
             Ability_Display_Panel.instance.Setup(skills);

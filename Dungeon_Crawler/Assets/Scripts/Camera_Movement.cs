@@ -56,7 +56,10 @@ public class Camera_Movement : MonoBehaviour
             {
                 transform.Translate(-Vector3.right * Time.deltaTime * ScrollSpeed, Space.World);
             }
-            Camera.main.transform.position += Vector3.up * Input.GetAxis("Mouse ScrollWheel");
+            transform.position -= Vector3.up * Input.GetAxis("Mouse ScrollWheel");
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, -45, 45), Mathf.Clamp(transform.position.y, 13, 25), Mathf.Clamp(transform.position.z, -50, 40));
+            
+            
         }
     }
 }

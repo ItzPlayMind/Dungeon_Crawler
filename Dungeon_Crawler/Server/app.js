@@ -11,6 +11,9 @@ var connectedAmount = 0;
 
 var redTeam = false;
 
+var redTeamScore = 0;
+var blueTeamScore = 0;
+
 io.on("connection", (socket) => {
     console.log("New Client connected!");
 
@@ -26,6 +29,7 @@ io.on("connection", (socket) => {
     
     socket.emit("setup", { id: thisPlayerID, isRedTeam: player.isRedTeam });//Tell myself to Spawn!
     socket.broadcast.emit("new player setup", player);//Tell everyone I spawned!
+    socket.emit("update score", {redScore: redTeamScore, blueScore: blueTeamScore});
 
     //Tell myself who is already in game!
     for (var playerID in players) {
@@ -49,6 +53,18 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("damage", sendData);
     });
 
+    socket.on("kill player", (data)=>{
+        if(data.isRedTeam){
+            redTeamScore++;
+        }
+        else{
+            blueTeamScore++;
+        }
+        if(redTeamScore < 15 && blueTeamScore < 15){
+            io.emit("update score", {redScore: redTeamScore, blueScore: blueTeamScore});
+        }
+    });
+
     socket.on("use ability", (data) => {
         socket.broadcast.emit("use ability", data);
     });
@@ -61,6 +77,16 @@ io.on("connection", (socket) => {
         console.log(x);
         player.items = x;
         socket.broadcast.emit("change item", player);
+    });
+
+    socket.on("change abilities", (data) => {
+        var x = [];
+        for (var i = 0; i <= 2; i++) {
+            x.push(data["ability" + i]);
+        }
+        console.log(x);
+        player.skills = x;
+        socket.broadcast.emit("change abilities", player);
     });
 
     socket.on("disconnect", (socket) => {

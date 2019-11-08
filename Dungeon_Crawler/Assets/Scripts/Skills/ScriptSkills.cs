@@ -30,7 +30,7 @@ public class ScriptSkills
     {
         GameObject user = NetworkManager.instance.GetPlayerByID(ID);
         var obj = GameObject.Instantiate(data.objects[0], user.transform.position+Vector3.up, user.transform.rotation);
-        obj.GetComponent<Flying_Object>().speed  = skill.onDisplayData.floats[0]/0.5f*60;
+        obj.GetComponent<Flying_Object>().speed  = skill.onDisplayData.floats[0]/ obj.GetComponent<Flying_Object>().destroyTime* 60;
         var trigger = obj.GetComponent<NetworkTrigger>();
         trigger.onHit += skill.OnHit;
         trigger.user = user;
@@ -91,5 +91,33 @@ public class ScriptSkills
                 item.GetComponent<Rigidbody>().velocity = Vector3.up * 10f;
             }
         }
+    }
+
+    public static void EagleVisionUse(SkillData data, string ID, Vector3 position, Skill skill)
+    {
+        GameObject user = NetworkManager.instance.GetPlayerByID(ID);
+
+        var teamUser = user.GetComponent<Character_Controller>().isRedTeam;
+        var yourTeam = NetworkManager.instance.Player.GetComponent<Character_Controller>().isRedTeam;
+
+        var obj = GameObject.Instantiate(data.objects[0], user.transform.position + Vector3.up, user.transform.rotation);
+        obj.GetComponent<Flying_Object>().speed = skill.onDisplayData.floats[0] / obj.GetComponent<Flying_Object>().destroyTime * 60;
+        var trigger = obj.GetComponent<NetworkTrigger>();
+        trigger.onHit += skill.OnHit;
+        trigger.user = user;
+
+        if (teamUser != yourTeam)
+        {
+            obj.transform.GetChild(0).gameObject.SetActive(false);
+        }
+    }
+
+    public static void EagleVisionHit(SkillData data, GameObject user, GameObject target, Skill skill)
+    {
+        Debug.Log(user.GetComponent<NetworkIdentity>().ID);
+        var stun = target.AddComponent<TrueSight>();
+        stun.MaxDuration = 3f;
+        stun.mat = data.materials[0];
+        stun.Setup();
     }
 }

@@ -1,7 +1,67 @@
 fileFormatVersion: 2
 guid: 1e38ddd3e6155b34caf386824434d893
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 6510980724728253161
+    second: Quadrat_0
+  - first:
+      213: -7805408765792297682
+    second: Quadrat_1
+  - first:
+      213: 7585396741922609437
+    second: Quadrat_2
+  - first:
+      213: 4372502340204662989
+    second: Quadrat_3
+  - first:
+      213: 5228623618873501674
+    second: Quadrat_4
+  - first:
+      213: -5401427351407165051
+    second: Quadrat_5
+  - first:
+      213: 9158226100094945179
+    second: Quadrat_6
+  - first:
+      213: 2582464792527872285
+    second: Quadrat_7
+  - first:
+      213: -8913140002620322374
+    second: Quadrat_8
+  - first:
+      213: -5315440662981152460
+    second: Quadrat_9
+  - first:
+      213: -4487273811649713182
+    second: Quadrat_10
+  - first:
+      213: 1452399807664398824
+    second: Quadrat_11
+  - first:
+      213: 6922894035929088014
+    second: Quadrat_12
+  - first:
+      213: 956426548461957774
+    second: Quadrat_13
+  - first:
+      213: 2335504418535917795
+    second: Quadrat_14
+  - first:
+      213: 1233471272432807101
+    second: Quadrat_15
+  - first:
+      213: -1109436635214262719
+    second: Quadrat_16
+  - first:
+      213: -1173221355322466848
+    second: Quadrat_17
+  - first:
+      213: 3494104687214999153
+    second: Quadrat_18
+  - first:
+      213: -6693588990659213599
+    second: Quadrat_19
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,26 +91,26 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 1
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 80, y: 80, z: 80, w: 80}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -74,7 +134,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: 12
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -84,7 +144,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Quadrat_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e654397d3ab965a438aef3039221266a
+      internalID: 6510980724728253161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e148036b89dbf7e4a99c96309a6a1926
+      internalID: -7805408765792297682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_2
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56df579621b408246922e45ebf47a17e
+      internalID: 7585396741922609437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_3
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd79cab347b4194995336efea9525f5
+      internalID: 4372502340204662989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7113970ecd0ac314a90d21ab38f4df6e
+      internalID: 5228623618873501674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_5
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 349
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2593b8e2db422564980a05b495c904df
+      internalID: -5401427351407165051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_6
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 285
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379abced1ef89b74981262636dfff97c
+      internalID: 9158226100094945179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_7
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 285
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051f97b9f54f16a44bb3ce1573f1c9e3
+      internalID: 2582464792527872285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_8
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 221
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23eee6b640711694b98b8457c1bef65a
+      internalID: -8913140002620322374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_9
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 221
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d77b8614cfb11ae479da0e2d58dc01f2
+      internalID: -5315440662981152460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_10
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 157
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d7b23d909f3ba645b03782a73136017
+      internalID: -4487273811649713182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_11
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 157
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3e557730aebb44fba063fa54309f5d
+      internalID: 1452399807664398824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 93
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c70d51766859d4c8cbe9a452140204
+      internalID: 6922894035929088014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_13
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 93
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bc6dd1264531a4fa65493de6b94258
+      internalID: 956426548461957774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_14
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f25cdda2db9eba946974be161c2b65ae
+      internalID: 2335504418535917795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_15
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef0ef99ab2760f42b76b5f964b732a4
+      internalID: 1233471272432807101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feae3b6f13b4b0543959f9a2be8efe8d
+      internalID: -1109436635214262719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_17
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71868367b325cb41a26b7797dc98b64
+      internalID: -1173221355322466848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_18
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4a3fc9e40d4ca4d9cd8231d54a55f0
+      internalID: 3494104687214999153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quadrat_19
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 29
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 839f93a0d53e7d040b2d017d38513418
+      internalID: -6693588990659213599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

@@ -10,6 +10,10 @@ module.exports = class Player{
         for (var i = 0; i < 6; i++) {
             this.items.push("");
         }
+        this.skills = [];
+        for (var i = 0; i < 3; i++) {
+            this.skills.push("");
+        }
         this.isRedTeam = false;
     }
 }

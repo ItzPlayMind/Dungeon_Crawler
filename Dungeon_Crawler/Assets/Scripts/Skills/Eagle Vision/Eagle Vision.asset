@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
+  m_Name: Eagle Vision
+  m_EditorClassIdentifier: 
+  damage: 0
+  manaCost: 35
+  cooldown: 10
+  level: 0
+  onUseMethodName: EagleVisionUse
+  onUseData: {fileID: 11400000, guid: 2ec00271d6e2c8f45b10896750a72ccc, type: 2}
+  onHitMethodName: EagleVisionHit
+  onHitData: {fileID: 0}
+  onDisplayMethodName: RangeAttackDisplay
+  onDisplayData: {fileID: 11400000, guid: 2ec00271d6e2c8f45b10896750a72ccc, type: 2}
+  icon: {fileID: 4557577659295867294, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
