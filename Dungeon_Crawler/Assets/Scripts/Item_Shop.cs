@@ -26,4 +26,26 @@ public class Item_Shop : MonoBehaviour
             prefab.Setup(item);
         }
     }
+
+    public void SellItem(int index)
+    {
+        var stats = NetworkManager.instance.Player.GetComponent<Character_Stats>();
+        if (stats.Items[index] != null)
+        {
+            stats.GetStat("Gold").value += stats.Items[index].cost/2f;
+            stats.RemoveItem(index);
+            JSONObject obj = new JSONObject();
+            obj.AddField("id", NetworkManager.instance.Player.GetComponent<NetworkIdentity>().ID.RemoveQuotations());
+            int i = 1;
+            foreach (var item in stats.Items)
+            {
+                if (item != null)
+                    obj.AddField("item" + i, item.name);
+                else
+                    obj.AddField("item" + i, "");
+                i++;
+            }
+            NetworkManager.instance.Emit("change item", obj);
+        }
+    }
 }

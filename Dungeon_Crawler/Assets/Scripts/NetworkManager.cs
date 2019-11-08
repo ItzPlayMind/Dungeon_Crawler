@@ -73,7 +73,7 @@ public class NetworkManager : SocketIOComponent
             List<Item> items = new List<Item>();
             foreach (var item in e.data["items"].list)
             {
-                items.Add(Item_Shop.instance.allItems.Find(x => x.name == item.ToString().RemoveQuotations()));
+                items.Add(Item_Shop.instance.allItems.Find(x => x.name == item.ToString().RemoveQuotations())?.Copy());
             }
             behaviour.GetComponent<Character_Stats>().SetItems(items.ToArray());
             Vector3 pos = GetVectorFromData(e.data["position"]);
@@ -154,24 +154,36 @@ public class NetworkManager : SocketIOComponent
             }
         });
 
-        On("buy item", (SocketIOEvent e) =>
+        On("change item", (SocketIOEvent e) =>
         {
             var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
             //Debug.Log(e.data["id"].ToString().RemoveQuotations() + " took " + e.data["damage"].ToString() + " Damage from " + e.data["attackerID"].ToString().RemoveQuotations());
-            foreach (var item in behaviours)
+            foreach (var entity in behaviours)
             {
-                if (item.ID == e.data["id"].ToString().RemoveQuotations())
+                if (entity.ID == e.data["id"].ToString().RemoveQuotations())
                 {
-                    item.GetComponent<Character_Stats>().AddItem(Item_Shop.instance.allItems.Find(x => x.name == e.data["itemID"].ToString().RemoveQuotations()));
+                    Debug.Log("Change Items from " + entity.ID);
+                    List<Item> items = new List<Item>();
+                    foreach (var item in e.data["items"].list)
+                    {
+                        items.Add(Item_Shop.instance.allItems.Find(x => x.name == item.ToString().RemoveQuotations())?.Copy());
+                    }
+                    Debug.Log(string.Join(",", items));
+                    entity.GetComponent<Character_Stats>().SetItems(items.ToArray());
                     break;
                 }
             }
         });
     }
 
-    public void Respawn()
+    public void Respawn(GameObject gb)
     {
-        BtnConnect();
+        var controller = gb.GetComponent<Character_Controller>();
+        controller.transform.position = controller.isRedTeam ? redTeamSpawn.position : blueTeamSpawn.position;
+        var health = controller.GetComponent<Character_Stats>().GetStat("Health");
+        health.value = health.MaxValue;
+        controller.GetComponent<Character_Stats>().healthbar.SetHealthValue(1);
+        gb.SetActive(true);
         /*var controller = Player.GetComponent<Character_Controller>();
         Player = Instantiate(NetworkManager.instance.playerPrefab, controller.isRedTeam ? NetworkManager.instance.redTeamSpawn.position : NetworkManager.instance.blueTeamSpawn.position, Quaternion.identity);
         onSetup.Invoke(Player);*/

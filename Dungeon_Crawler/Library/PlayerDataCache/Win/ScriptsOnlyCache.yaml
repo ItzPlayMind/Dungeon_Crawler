@@ -20,6 +20,7 @@ ScriptsOnlyBuild:
     - Skill
     - SkillData
     - Stat
+    - Stat_Display
     - UnityEngine.AI.NavMeshSurface
     Unity.RenderPipelines.Lightweight.Runtime.dll:
     - UnityEngine.Experimental.Rendering.LWRP.RenderObjects
@@ -136,51 +137,53 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11240}
+      Script: {instanceID: 11132}
     - Class: 114
-      Script: {instanceID: 11308}
+      Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11382}
+      Script: {instanceID: 11196}
     - Class: 114
-      Script: {instanceID: 11550}
+      Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11632}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11672}
+      Script: {instanceID: 11388}
     - Class: 114
-      Script: {instanceID: 11760}
+      Script: {instanceID: 11556}
     - Class: 114
-      Script: {instanceID: 11800}
+      Script: {instanceID: 11638}
     - Class: 114
-      Script: {instanceID: 11932}
+      Script: {instanceID: 11678}
     - Class: 114
-      Script: {instanceID: 11958}
+      Script: {instanceID: 11768}
     - Class: 114
-      Script: {instanceID: 12032}
+      Script: {instanceID: 11808}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 11940}
     - Class: 114
-      Script: {instanceID: 12056}
+      Script: {instanceID: 11966}
     - Class: 114
-      Script: {instanceID: 12226}
+      Script: {instanceID: 12012}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12042}
     - Class: 114
-      Script: {instanceID: 12378}
+      Script: {instanceID: 12046}
     - Class: 114
-      Script: {instanceID: 12492}
+      Script: {instanceID: 12066}
     - Class: 114
-      Script: {instanceID: 12800}
+      Script: {instanceID: 12236}
     - Class: 114
-      Script: {instanceID: 13166}
+      Script: {instanceID: 12254}
     - Class: 114
-      Script: {instanceID: 13294}
+      Script: {instanceID: 12388}
     - Class: 114
-      Script: {instanceID: 31288}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 63770}
+      Script: {instanceID: 12810}
     - Class: 114
-      Script: {instanceID: 63776}
+      Script: {instanceID: 13176}
+    - Class: 114
+      Script: {instanceID: 13304}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -530,6 +533,12 @@ ScriptsOnlyBuild:
     className: SkillData
   - hash:
       serializedVersion: 2
+      Hash: 85d2ad2ee121cc9bd1657296fc263689
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item
+  - hash:
+      serializedVersion: 2
       Hash: 61b9d9b6f4b6a222dfea8b131b3d3227
     assemblyName: Unity.Postprocessing.Runtime.dll
     namespaceName: UnityEngine.Rendering.PostProcessing
@@ -540,6 +549,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Rendering.LWRP
     className: LightweightRenderPipelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 1bb5dc9d21316dd94d7b53ee3ff658fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item_Shop
+  - hash:
+      serializedVersion: 2
+      Hash: 5f66a77405d084d69ed0abe6f7fcfc44
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Item_Panel_Prefab
   - hash:
       serializedVersion: 2
       Hash: 46829583e8fe72d46b500baf2fcefae8
@@ -614,7 +635,7 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
-      Hash: 85af9a2367da2c6ce09bf448bd7d9ae1
+      Hash: af7ccbfdef32fbc681c5db514bcf1377
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Stat
@@ -654,6 +675,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScriptItems
   - hash:
       serializedVersion: 2
       Hash: 92da9881aed190e8bb74661bcd74aa2c
@@ -708,6 +735,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 654e9a54467076b32c3cf4d2ef54c6bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Stat_Display
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -960,31 +993,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 85d2ad2ee121cc9bd1657296fc263689
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Item
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScriptItems
-  - hash:
-      serializedVersion: 2
-      Hash: 5f66a77405d084d69ed0abe6f7fcfc44
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Item_Panel_Prefab
-  - hash:
-      serializedVersion: 2
-      Hash: 1bb5dc9d21316dd94d7b53ee3ff658fc
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Item_Shop
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe

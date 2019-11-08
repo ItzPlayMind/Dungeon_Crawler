@@ -17,8 +17,9 @@ public class Item_Panel_Prefab : MonoBehaviour
     public void Buy()
     {
         var stats = NetworkManager.instance.Player.GetComponent<Character_Stats>();
-        if (stats.CanAddItem())
+        if (stats.CanAddItem() && stats.GetStat("Gold").value >= item.cost)
         {
+            stats.GetStat("Gold").value -= item.cost;
             stats.AddItem(item);
             JSONObject obj = new JSONObject();
             obj.AddField("id", NetworkManager.instance.Player.GetComponent<NetworkIdentity>().ID.RemoveQuotations());
@@ -31,7 +32,7 @@ public class Item_Panel_Prefab : MonoBehaviour
                     obj.AddField("item" + i, "");
                 i++;
             }
-            NetworkManager.instance.Emit("buy item", obj);
+            NetworkManager.instance.Emit("change item", obj);
         }
     }
 }

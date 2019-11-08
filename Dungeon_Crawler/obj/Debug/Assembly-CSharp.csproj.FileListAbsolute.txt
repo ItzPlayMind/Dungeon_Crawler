@@ -1,0 +1,2 @@
+D:\GitHub Projects\Dungeon_Crawler\Dungeon_Crawler\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\GitHub Projects\Dungeon_Crawler\Dungeon_Crawler\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

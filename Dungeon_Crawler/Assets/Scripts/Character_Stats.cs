@@ -13,7 +13,15 @@ public class Character_Stats : NetworkBehaviour
 
     public void SetItems(Item[] arr)
     {
-        items = arr;
+        for (int i = 0; i < items.Length; i++)
+        {
+            if(items[i] == null && arr[i] != null)
+            {
+                AddItem(arr[i],i);
+            }
+            if (items[i] != null && arr[i] == null)
+                RemoveItem(i);
+        }
     }
 
     private void Start()
@@ -39,7 +47,7 @@ public class Character_Stats : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Item_Shop.instance.GFX.SetActive(!Item_Shop.instance.GFX.activeSelf);
+            Item_Shop.instance.GFX.SetActive(true);
         }
     }
 
@@ -80,23 +88,31 @@ public class Character_Stats : NetworkBehaviour
         }
     }
 
+    public void AddItem(Item item, int i)
+    {
+        items[i] = item.Copy();
+        items[i].Setup(this);
+        items[i].Passive(gameObject);
+    }
+
     public void RemoveItem(int index)
     {
         items[index].Remove(this);
         items[index] = null;
     }
 
-    public void TakeDamage(float value)
+    public bool TakeDamage(float value)
     {
         Debug.Log(gameObject.name + " took " + value + " Damage!");
         var health = GetStat("Health");
         health.value = Mathf.Max(health.value - value,0);
-        healthbar.SetHealthValue(health.value / health.BaseValue);
+        healthbar.SetHealthValue(health.value / health.MaxValue);
         if (health.value <= 0)
         {
-            Destroy(gameObject);
-            if(isLocal)
-                NetworkManager.instance.Respawn(); 
+            gameObject.SetActive(false);
+            NetworkManager.instance.Respawn(gameObject);
+            return true;
         }
+        return false;
     }
 }

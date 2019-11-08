@@ -47,7 +47,10 @@ public class Character_Controller : NetworkBehaviour
         {
             if (Vector3.Distance(target.transform.position, transform.position) <= ownStats.GetStat("Attack Range").value)
             {
-                target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value);
+                if(target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value))
+                {
+                    ownStats.GetStat("Gold").value += 100;
+                }
                 SendAttackDamage(ownStats.GetStat("Attack Damage").value,target);
             }
         }

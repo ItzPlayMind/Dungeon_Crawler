@@ -28,8 +28,11 @@ public class Item : ScriptableObject
         }
         foreach (var item in addStats)
         {
-            if(stats.GetStat(item.name) != null)
+            if (stats.GetStat(item.name) != null)
+            {
                 stats.GetStat(item.name).value += item.value;
+                stats.GetStat(item.name).MaxValue += item.value;
+            }
         }
     }
 
@@ -38,7 +41,10 @@ public class Item : ScriptableObject
         foreach (var item in addStats)
         {
             if (stats.GetStat(item.name) != null)
+            {
+                stats.GetStat(item.name).MaxValue -= item.value;
                 stats.GetStat(item.name).value -= item.value;
+            }
         }
     }
 

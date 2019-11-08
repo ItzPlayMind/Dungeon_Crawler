@@ -53,14 +53,14 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("use ability", data);
     });
 
-    socket.on("buy item", (data) => {
+    socket.on("change item", (data) => {
         var x = [];
         for (var i = 1; i <= 6; i++) {
             x.push(data["item" + i]);
         }
         console.log(x);
         player.items = x;
-        socket.broadcast.emit("buy item", data);
+        socket.broadcast.emit("change item", player);
     });
 
     socket.on("disconnect", (socket) => {
