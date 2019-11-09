@@ -83,7 +83,10 @@ public class ScriptSkills
             {
                 if (item.GetComponent<NetworkIdentity>().ID == ID)
                     continue;
-                item.GetComponent<Character_Stats>().TakeDamage(skill.damage);
+                if (item.GetComponent<Character_Stats>().TakeDamage(skill.damage))
+                {
+                    user.GetComponent<Character_Stats>().GetStat("Gold").value += 100;
+                }
                 var stun = item.gameObject.AddComponent<Airborne>();
                 stun.MaxDuration = 2f;
                 stun.onGroundHit += OnGroundHit;

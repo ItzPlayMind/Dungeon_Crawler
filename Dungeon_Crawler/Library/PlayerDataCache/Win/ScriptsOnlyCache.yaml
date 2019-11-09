@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     Unity.RenderPipelines.Lightweight.Runtime.dll:
     - UnityEngine.Experimental.Rendering.LWRP.RenderObjects
     - UnityEngine.Rendering.LWRP.ForwardRendererData
+    - UnityEngine.Rendering.LWRP.LWRPAdditionalCameraData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
@@ -92,6 +93,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -124,6 +127,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 10402}
     - Class: 114
       Script: {instanceID: 10582}
+    - Class: 114
+      Script: {instanceID: 10714}
     - Class: 114
       Script: {instanceID: 10718}
     - Class: 114
@@ -189,7 +194,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13180}
     - Class: 114
-      Script: {instanceID: 13308}
+      Script: {instanceID: 13310}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -595,7 +600,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 6c0c3a6b751d46ef47bddb7771332e08
+      Hash: 821bcb95185daeaa2aa5bf68cb01bb66
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Character_Controller
@@ -805,7 +810,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 7c0845039122848ff751e059a4eccc4f
+      Hash: 6461cc8b5fa374dee77c54d8adf69b17
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -991,6 +996,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: f75a11aa540353aa9750322528763d7d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TrueSight
+  - hash:
+      serializedVersion: 2
       Hash: 209fe8c7c43bac0bff657b5649483658
     assemblyName: Unity.RenderPipelines.Lightweight.Runtime.dll
     namespaceName: UnityEngine.Experimental.Rendering.LWRP
@@ -1013,13 +1024,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: f75a11aa540353aa9750322528763d7d
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TrueSight
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe

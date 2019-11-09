@@ -179,8 +179,8 @@ public class NetworkManager : SocketIOComponent
 
         On("update score", (SocketIOEvent e) =>
         {
-            redScoreText.text = e.data["redScore"].f + "";
-            blueScoreText.text = e.data["blueScore"].f + "";
+            redScoreText.text = int.Parse(e.data["redScore"].ToString().RemoveQuotations()) + "";
+            blueScoreText.text = int.Parse(e.data["blueScore"].ToString().RemoveQuotations()) + "";
         });
 
         On("change item", (SocketIOEvent e) =>

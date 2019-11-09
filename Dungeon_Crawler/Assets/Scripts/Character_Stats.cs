@@ -111,6 +111,9 @@ public class Character_Stats : NetworkBehaviour
         {
             gameObject.SetActive(false);
             NetworkManager.instance.Respawn(gameObject);
+            JSONObject obj = new JSONObject();
+            obj.AddField("isRedTeam", !GetComponent<Character_Controller>().isRedTeam);
+            NetworkManager.instance.Emit("kill player", obj);
             return true;
         }
         return false;

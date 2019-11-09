@@ -50,9 +50,6 @@ public class Character_Controller : NetworkBehaviour
                 if(target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value))
                 {
                     ownStats.GetStat("Gold").value += 100;
-                    JSONObject obj = new JSONObject();
-                    obj.AddField("isRedTeam", isRedTeam);
-                    NetworkManager.instance.Emit("kill player",obj);
                 }
                 SendAttackDamage(ownStats.GetStat("Attack Damage").value,target);
             }

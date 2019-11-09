@@ -53,7 +53,8 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("damage", sendData);
     });
 
-    socket.on("kill player", (data)=>{
+    socket.on("kill player", (data) => {
+        console.log("Player killed!");
         if(data.isRedTeam){
             redTeamScore++;
         }
