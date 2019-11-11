@@ -7,17 +7,17 @@ public class Character_Stats : NetworkBehaviour
 {
     [SerializeField] List<Stat> stats = new List<Stat>();
     [SerializeField] Item[] items = new Item[6];
-    public HealthBar healthbar; 
-    
+    public HealthBar healthbar;
+
     public Item[] Items { get => items; }
 
     public void SetItems(Item[] arr)
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if(items[i] == null && arr[i] != null)
+            if (items[i] == null && arr[i] != null)
             {
-                AddItem(arr[i],i);
+                AddItem(arr[i], i);
             }
             if (items[i] != null && arr[i] == null)
                 RemoveItem(i);
@@ -40,7 +40,66 @@ public class Character_Stats : NetworkBehaviour
             }
         }
         healthbar.SetHealthValue(1);
-        healthbar.SetManaValue(1);
+        healthbar.SetLevelValue(0);
+        xp = GetStat("XP");
+        if (isLocal)
+        {
+            healthbar.SetLevel(1);
+            xp.MaxValue = 10;
+            InvokeRepeating("AddXP", 1, 1);
+        }
+    }
+
+    Stat xp;
+
+    void AddXP()
+    {
+        xp.value += 1;
+        if (xp.value >= xp.MaxValue)
+        {
+            var level = GetStat("Level");
+            level.value++;
+            xp.value = xp.value - xp.MaxValue;
+            xp.MaxValue = 10 * level.value;
+            healthbar.SetLevel((int)level.value);
+        }
+        healthbar.SetLevelValue(xp.value / xp.MaxValue);
+        JSONObject obj = new JSONObject();
+        obj.AddField("id", ID);
+        obj.AddField("level", GetStat("Level").value);
+        obj.AddField("xp", xp.value);
+        NetworkManager.instance.Emit("change xp", obj);
+    }
+
+    public void SetToLevelWithXP(int level, int xp)
+    {
+        GetStat("Level").value = level;
+        this.xp.MaxValue = 10 * level;
+        this.xp.value = xp;
+    }
+
+    public void AddXP(int i)
+    {
+        if (xp == null)
+            xp = GetStat("XP");
+        xp.value += i;
+        if (xp.value >= xp.MaxValue)
+        {
+            var level = GetStat("Level");
+            level.value++;
+            xp.value = xp.value - xp.MaxValue;
+            xp.MaxValue = 10 * level.value;
+            healthbar.SetLevel((int)level.value);
+        }
+        healthbar.SetLevelValue(xp.value / xp.MaxValue);
+        if (isLocal)
+        {
+            JSONObject obj = new JSONObject();
+            obj.AddField("id", ID);
+            obj.AddField("level", GetStat("Level").value);
+            obj.AddField("xp", xp.value);
+            NetworkManager.instance.Emit("change xp", obj);
+        }
     }
 
     private void Update()
@@ -55,7 +114,7 @@ public class Character_Stats : NetworkBehaviour
     {
         foreach (var item in stats)
         {
-            if(item.name == name)
+            if (item.name == name)
             {
                 return item;
             }
@@ -105,7 +164,7 @@ public class Character_Stats : NetworkBehaviour
     {
         Debug.Log(gameObject.name + " took " + value + " Damage!");
         var health = GetStat("Health");
-        health.value = Mathf.Max(health.value - value,0);
+        health.value = Mathf.Max(health.value - value, 0);
         healthbar.SetHealthValue(health.value / health.MaxValue);
         if (health.value <= 0)
         {

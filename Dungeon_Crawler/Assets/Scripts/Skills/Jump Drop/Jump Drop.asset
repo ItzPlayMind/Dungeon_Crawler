@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Jump Drop
   m_EditorClassIdentifier: 
   damage: 0
-  manaCost: 15
+  description: Lets you jump a specific distance. If used correctly you can jump over
+    walls or enemies to escape or engage. Stuns you after you land.
   cooldown: 5
-  level: 0
+  maxUsage: -1
+  minLevel: 0
   onUseMethodName: JumpDropUse
   onUseData: {fileID: 11400000, guid: 09690bd44a02ac047977d07660d4efd5, type: 2}
   onHitMethodName: 
   onHitData: {fileID: 0}
   onDisplayMethodName: CircleCircleAttack
   onDisplayData: {fileID: 11400000, guid: 833f59e7871713e4786110548daa5b9a, type: 2}
-  icon: {fileID: -845441487989709847, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
+  icon: {fileID: 1117634139614830168, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

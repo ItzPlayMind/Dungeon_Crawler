@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
+  m_Name: Poison Bombs
+  m_EditorClassIdentifier: 
+  damage: 5
+  description: Lets you throw 4 poison bombs which are only visible for you. If an
+    enemy gets to close they will explode, poisoning them in the process.
+  cooldown: 25
+  maxUsage: 4
+  minLevel: 3
+  onUseMethodName: PoisonBombsUse
+  onUseData: {fileID: 11400000, guid: 564a4164d92b41849b32b531b606eae6, type: 2}
+  onHitMethodName: PoisonBombsHit
+  onHitData: {fileID: 11400000, guid: 564a4164d92b41849b32b531b606eae6, type: 2}
+  onDisplayMethodName: CircleCircleAttack
+  onDisplayData: {fileID: 11400000, guid: 564a4164d92b41849b32b531b606eae6, type: 2}
+  icon: {fileID: 5043790685641862667, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

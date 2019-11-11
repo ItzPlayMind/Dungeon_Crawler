@@ -8,23 +8,30 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private GameObject Bar;
     [SerializeField] private Image healthBarFill;
 
-    [SerializeField] private Image manaBarFill;
+    [SerializeField] private Image levelBarFill;
     [SerializeField] private Image effectBarFill;
     [SerializeField] TMPro.TextMeshProUGUI effectNameText;
+    [SerializeField] TMPro.TextMeshProUGUI levelText;
     [SerializeField] GameObject effectDisplay;
+    
     float healthValue;
-    float manaValue;
+    float levelValue;
     float effectValue;
     string effectName;
+
+    public void SetLevel(int lvl)
+    {
+        levelText.text = lvl + "";
+    }
 
     public void SetHealthValue(float amount)
     {
         healthValue = Mathf.Clamp01(amount);
     }
 
-    public void SetManaValue(float amount)
+    public void SetLevelValue(float amount)
     {
-        manaValue = Mathf.Clamp01(amount);
+        levelValue = Mathf.Clamp01(amount);
     }
 
     public void SetEffectValue(float amount)
@@ -45,7 +52,7 @@ public class HealthBar : MonoBehaviour
     private void Update()
     {
         healthBarFill.fillAmount = healthValue;
-        manaBarFill.fillAmount = manaValue;
+        levelBarFill.fillAmount = levelValue;
         effectBarFill.fillAmount = effectValue;
         effectNameText.text = effectName;
         Vector3 dir = (Camera.main.transform.position - Bar.transform.position).normalized;

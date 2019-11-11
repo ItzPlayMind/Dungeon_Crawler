@@ -57,6 +57,7 @@ public class Ability_Selector : MonoBehaviour
             }
             else
             {
+                selectedAbilitieImages[i].sprite = null;
                 isVisible = false;
             }
         }

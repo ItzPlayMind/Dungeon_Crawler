@@ -64,10 +64,19 @@ io.on("connection", (socket) => {
         if(redTeamScore < 15 && blueTeamScore < 15){
             io.emit("update score", {redScore: redTeamScore, blueScore: blueTeamScore});
         }
+        else{
+            io.emit("win", {redTeam: (redTeamScore >= 15), blueTeam: (blueTeamScore >= 15)});
+        }
     });
 
     socket.on("use ability", (data) => {
         socket.broadcast.emit("use ability", data);
+    });
+
+    socket.on("change xp", (data) => {
+        player.xp = data.xp;
+        player.level = data.level;
+        socket.broadcast.emit("change xp", player);
     });
 
     socket.on("change item", (data) => {
@@ -82,12 +91,16 @@ io.on("connection", (socket) => {
 
     socket.on("change abilities", (data) => {
         var x = [];
-        for (var i = 0; i <= 2; i++) {
+        for (var i = 0; i <= 3; i++) {
             x.push(data["ability" + i]);
         }
         console.log(x);
         player.skills = x;
         socket.broadcast.emit("change abilities", player);
+    });
+
+    socket.on("play animation", (data) => {
+        socket.broadcast.emit("play animation",data);
     });
 
     socket.on("disconnect", (socket) => {

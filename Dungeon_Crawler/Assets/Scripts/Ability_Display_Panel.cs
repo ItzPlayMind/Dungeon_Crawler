@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,11 +20,22 @@ public class Ability_Display_Panel : MonoBehaviour
         for (int i = 0; i < skills.Length; i++)
         {
             ability_Slot_Prefabs[i].GetComponent<Image>().sprite = skills[i].icon;
+            ability_Slot_Prefabs[i].SetUsage(skills[i].maxUsage);
         }
     }
 
     public void SetTimeForIndex(int index, float time)
     {
         ability_Slot_Prefabs[index].SetTime(time);
+    }
+
+    public void SetUsageFromIndex(int i, int maxUsage)
+    {
+        ability_Slot_Prefabs[i].SetUsage(maxUsage);
+    }
+
+    public void SetLevelCapForIndex(int i, bool value)
+    {
+        ability_Slot_Prefabs[i].SetLevelCap(value);
     }
 }

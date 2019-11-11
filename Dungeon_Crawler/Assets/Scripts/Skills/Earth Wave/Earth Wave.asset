@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
+  m_Name: Earth Wave
+  m_EditorClassIdentifier: 
+  damage: 50
+  description: Sends out a an Earth Wave which goes trough walls and knocks up enemies.
+    Knocked up enemies will be visible after landing.
+  cooldown: 60
+  maxUsage: -1
+  minLevel: 0
+  onUseMethodName: EarthWaveUse
+  onUseData: {fileID: 11400000, guid: 1dcd7d8c1921f92458d459ffcf8ff321, type: 2}
+  onHitMethodName: EarthWaveHit
+  onHitData: {fileID: 0}
+  onDisplayMethodName: RangeAttackDisplay
+  onDisplayData: {fileID: 11400000, guid: 1dcd7d8c1921f92458d459ffcf8ff321, type: 2}
+  icon: {fileID: 2423808878841372895, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

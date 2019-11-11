@@ -27,10 +27,12 @@ public class NetworkManager : SocketIOComponent
 
     public GameObject playerPrefab;
 
-    [HideInInspector]public Skill[] abilitiesForSpawn = new Skill[3];
+    [HideInInspector] public Skill[] abilitiesForSpawn;
 
     [SerializeField] TMPro.TextMeshProUGUI redScoreText;
     [SerializeField] TMPro.TextMeshProUGUI blueScoreText;
+    [SerializeField] GameObject gameUI;
+    [SerializeField] TMPro.TextMeshProUGUI winText;
 
     public GameObject GetPlayerByID(string userID)
     {
@@ -48,19 +50,20 @@ public class NetworkManager : SocketIOComponent
 
     public override void Start()
     {
+        abilitiesForSpawn = new Skill[4];
         base.Start();
         input.text = "127.0.0.1";
         On("setup", (SocketIOEvent e) =>
         {
             var behaviour = Instantiate(playerPrefab, e.data["isRedTeam"].b ? redTeamSpawn.position : blueTeamSpawn.position, Quaternion.identity).GetComponent<NetworkIdentity>();
-            /*if (!e.data["isRedTeam"].b)
+            if (!e.data["isRedTeam"].b)
             {
-                redTeamSpawn.GetChild(0).gameObject.SetActive(false);
+                blueScoreText.fontStyle = TMPro.FontStyles.Underline;
             }
             else
             {
-                blueTeamSpawn.GetChild(0).gameObject.SetActive(false);
-            }*/
+                redScoreText.fontStyle = TMPro.FontStyles.Underline;
+            }
             behaviour.setIsLocal(true);
             behaviour.setID(e.data["id"].ToString().RemoveQuotations());
             behaviour.GetComponent<Character_Controller>().isRedTeam = e.data["isRedTeam"].b;
@@ -87,7 +90,6 @@ public class NetworkManager : SocketIOComponent
             controller.isRedTeam = e.data["isRedTeam"].b;
             Debug.Log(controller.isRedTeam + " " + Player.GetComponent<Character_Controller>().isRedTeam);
             controller.Setup(Player.GetComponent<Character_Controller>().isRedTeam != controller.isRedTeam);
-            Debug.Log(e.data["items"].list.Count);
             List<Item> items = new List<Item>();
             foreach (var item in e.data["items"].list)
             {
@@ -99,6 +101,7 @@ public class NetworkManager : SocketIOComponent
                 skills.Add(Ability_Selector.instance.allSkills.Find(x => x.name == skill.ToString().RemoveQuotations())?.Copy());
             }
             behaviour.GetComponent<Character_Ability>().skills = skills.ToArray();
+            behaviour.GetComponent<Character_Stats>().SetToLevelWithXP((int)e.data["level"].f, (int)e.data["xp"].f);
             Vector3 pos = GetVectorFromData(e.data["position"]);
             Vector3 rot = GetVectorFromData(e.data["rotation"]);
             behaviour.transform.position = pos;
@@ -177,10 +180,67 @@ public class NetworkManager : SocketIOComponent
             }
         });
 
+        On("change xp", (SocketIOEvent e) =>
+        {
+            var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
+            //Debug.Log(e.data["id"].ToString().RemoveQuotations() + " took " + e.data["damage"].ToString() + " Damage from " + e.data["attackerID"].ToString().RemoveQuotations());
+            foreach (var item in behaviours)
+            {
+                if (item.ID == e.data["id"].ToString().RemoveQuotations())
+                {
+                    var stats = item.GetComponent<Character_Stats>();
+                    stats.healthbar.SetLevel((int)e.data["level"].f);
+                    stats.healthbar.SetLevelValue(e.data["xp"].f/(10* (int)e.data["level"].f));
+                    break;
+                }
+            }
+        });
+
         On("update score", (SocketIOEvent e) =>
         {
             redScoreText.text = int.Parse(e.data["redScore"].ToString().RemoveQuotations()) + "";
             blueScoreText.text = int.Parse(e.data["blueScore"].ToString().RemoveQuotations()) + "";
+        });
+
+        On("win", (SocketIOEvent e) =>
+        {
+            Close();
+            var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
+            foreach (var item in behaviours)
+            {
+                Destroy(item.gameObject);
+            }
+
+            string txt = "";
+            if (e.data["redTeam"].b && !e.data["blueTeam"].b)
+            {
+                txt = "Red team won!";
+            }
+            else if (e.data["blueTeam"].b && !e.data["redTeam"].b)
+            {
+                txt = "Blue team won!";
+            }
+            else
+            {
+                txt = "It was a draw!";
+            }
+            winText.text = txt;
+            Invoke("Restart", 2f);
+        });
+
+        On("play animation", (SocketIOEvent e) =>
+        {
+            var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
+            //Debug.Log(e.data["id"].ToString().RemoveQuotations() + " took " + e.data["damage"].ToString() + " Damage from " + e.data["attackerID"].ToString().RemoveQuotations());
+            foreach (var item in behaviours)
+            {
+                if (item.ID == e.data["id"].ToString().RemoveQuotations())
+                {
+                    var animator = item.GetComponent<Character_Animator>();
+                    animator.PlayAnimation(e.data["state"].ToString().RemoveQuotations());
+                    break;
+                }
+            }
         });
 
         On("change item", (SocketIOEvent e) =>
@@ -224,6 +284,13 @@ public class NetworkManager : SocketIOComponent
                 }
             }
         });
+    }
+
+    public void Restart()
+    {
+        winText.text = "";
+        gameUI.SetActive(false);
+        Ability_Selector.instance.gameObject.SetActive(true);
     }
 
     public void Respawn(GameObject gb)

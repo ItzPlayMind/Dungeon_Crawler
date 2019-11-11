@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: Eagle Vision
   m_EditorClassIdentifier: 
   damage: 0
-  manaCost: 35
+  description: Shoots out a glowing eagle that shows you its surroundings.
   cooldown: 10
-  level: 0
+  maxUsage: -1
+  minLevel: 0
   onUseMethodName: EagleVisionUse
   onUseData: {fileID: 11400000, guid: 2ec00271d6e2c8f45b10896750a72ccc, type: 2}
   onHitMethodName: EagleVisionHit
   onHitData: {fileID: 0}
   onDisplayMethodName: RangeAttackDisplay
   onDisplayData: {fileID: 11400000, guid: 2ec00271d6e2c8f45b10896750a72ccc, type: 2}
-  icon: {fileID: 4557577659295867294, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
+  icon: {fileID: 850648376051233437, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

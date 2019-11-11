@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Ground Shatter
   m_EditorClassIdentifier: 
   damage: 35
-  manaCost: 15
+  description: Makes the earth under your feet move and collapse knocking enemies
+    in the air and then stunning them for 1 second.
   cooldown: 30
-  level: 0
+  maxUsage: -1
+  minLevel: 0
   onUseMethodName: GroundShatterUse
   onUseData: {fileID: 11400000, guid: 919eb347c030d3c489814e57c4f1de97, type: 2}
   onHitMethodName: 
   onHitData: {fileID: 0}
   onDisplayMethodName: CircleAttack
   onDisplayData: {fileID: 11400000, guid: 919eb347c030d3c489814e57c4f1de97, type: 2}
-  icon: {fileID: -2602706537647163771, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
+  icon: {fileID: -7689244023525031321, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

@@ -22,9 +22,9 @@ TagManager:
   - DoNotRenderOnMiniMap
   - RenderOnTopOfMiniMap
   - RenderOnTop
-  - 
-  - 
-  - 
+  - DontCollideWithPlayer
+  - Player
+  - DontRender
   - 
   - 
   - 

@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: Flying Knife
   m_EditorClassIdentifier: 
   damage: 15
-  manaCost: 35
+  description: Shoots out a knife. If an enemy is hit it stunnes it and pulls it towards
+    you.
   cooldown: 5
-  level: 0
+  maxUsage: 2
+  minLevel: 0
   onUseMethodName: FlyingKnifeUse
   onUseData: {fileID: 11400000, guid: ec982e6e6fe304c48b78176cd4a01bbd, type: 2}
   onHitMethodName: FlyingKnifeHit
   onHitData: {fileID: 0}
   onDisplayMethodName: RangeAttackDisplay
   onDisplayData: {fileID: 11400000, guid: c294fef68940eaf4181b2dc53694f591, type: 2}
-  icon: {fileID: 4773031513114947462, guid: 63f9cfa84132c5245b350d01301e26bc, type: 3}
+  icon: {fileID: 6831734762154234505, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

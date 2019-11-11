@@ -2,12 +2,15 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AbilityBTN_Prefab
+    - Ability_Description_Panel
     - Ability_Display
     - Ability_Display_Panel
     - Ability_Selector
     - Ability_Slot_Prefab
+    - AnimationEventSender
     - Camera_Movement
     - Character_Ability
+    - Character_Animator
     - Character_Controller
     - Character_Stats
     - FieldOfView
@@ -40,8 +43,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -96,6 +101,8 @@ ScriptsOnlyBuild:
     - Class: 84
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -152,49 +159,55 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11246}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11274}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11316}
     - Class: 114
-      Script: {instanceID: 11556}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11638}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 11678}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11768}
+      Script: {instanceID: 11642}
     - Class: 114
-      Script: {instanceID: 11808}
+      Script: {instanceID: 11682}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 11774}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11814}
     - Class: 114
-      Script: {instanceID: 11982}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 12014}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12044}
+      Script: {instanceID: 11988}
     - Class: 114
-      Script: {instanceID: 12048}
+      Script: {instanceID: 12020}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 12050}
     - Class: 114
-      Script: {instanceID: 12238}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 12256}
+      Script: {instanceID: 12074}
     - Class: 114
-      Script: {instanceID: 12390}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12262}
     - Class: 114
-      Script: {instanceID: 12634}
+      Script: {instanceID: 12396}
     - Class: 114
-      Script: {instanceID: 12814}
+      Script: {instanceID: 12510}
     - Class: 114
-      Script: {instanceID: 13180}
+      Script: {instanceID: 12640}
     - Class: 114
-      Script: {instanceID: 13310}
+      Script: {instanceID: 12820}
+    - Class: 114
+      Script: {instanceID: 13186}
+    - Class: 114
+      Script: {instanceID: 13316}
+    - Class: 114
+      Script: {instanceID: 31894}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -203,7 +216,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
+      Script: {instanceID: 0}
+    - Class: 182
       Script: {instanceID: 0}
     - Class: 195
       Script: {instanceID: 0}
@@ -474,7 +491,7 @@ ScriptsOnlyBuild:
     className: LWRPAdditionalCameraData
   - hash:
       serializedVersion: 2
-      Hash: 3d423be9991a149621f968f5492f3171
+      Hash: 81f28395153663e7e5555a2815adea38
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Ability_Slot_Prefab
@@ -492,7 +509,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: a38f28428050391e9a8de0d4ccb55d0d
+      Hash: 8d12fbf24fb4f08c8da0eedc78731225
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Skill
@@ -582,6 +599,12 @@ ScriptsOnlyBuild:
     className: Ability_Display_Panel
   - hash:
       serializedVersion: 2
+      Hash: 30f3213a6e218a461fa00e428f22d3eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Character_Animator
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -630,6 +653,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 37a5fe393abccb3dfbb19934bd2bcf60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimationEventSender
+  - hash:
+      serializedVersion: 2
       Hash: 7299a528424874bcf6b5736b5305ac37
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityEngine.AI
@@ -666,7 +695,7 @@ ScriptsOnlyBuild:
     className: PostProcessDebug
   - hash:
       serializedVersion: 2
-      Hash: 7ab7df2e0ea30a70f0549fc2c5ec0e71
+      Hash: 51b103393d3bd58e7ad2eaf593be62b1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkTrigger
@@ -702,7 +731,13 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 89b3d826f3abe638809f285b410f746b
+      Hash: 85ef68ab01584dacb19e67c0fe877157
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Poison
+  - hash:
+      serializedVersion: 2
+      Hash: 1073555e8757581dfd96e87ff5b0c79b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthBar
@@ -810,7 +845,7 @@ ScriptsOnlyBuild:
     className: PixelPerfectCamera
   - hash:
       serializedVersion: 2
-      Hash: 6461cc8b5fa374dee77c54d8adf69b17
+      Hash: 7a794b6ea114f11cd3789f6874fb069d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: NetworkManager
@@ -1024,7 +1059,19 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 219b3134a4f5445ee90a3c12c310bff2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ability_Description_Panel
+  - hash:
+      serializedVersion: 2
+      Hash: 85ef68ab01584dacb19e67c0fe877157
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Void
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Maximilian/Documents/GitHub/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
+  playerPath: D:/GitHub Projects/Dungeon_Crawler/Dungeon_Crawler/Builds/Dungeon_Crawler.exe
