@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
   m_Name: Black Hole
   m_EditorClassIdentifier: 
-  damage: 2
-  description: Throws a black hole to the targeted location. When the black hole lands
-    it pulls nearby enemies towards it dealing damage over time.
+  damage: 5
+  description: Creates a black hole at the targeted location. When the black hole
+    lands it pulls nearby enemies towards it dealing damage over time.
   cooldown: 90
   maxUsage: -1
   minLevel: 0

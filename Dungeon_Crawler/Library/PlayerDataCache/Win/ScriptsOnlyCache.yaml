@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - NetworkIdentity
     - NetworkManager
     - NetworkTrigger
+    - Rotator
     - Skill
     - SkillData
     - Stat
@@ -43,10 +44,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -115,99 +114,101 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9822}
+      Script: {instanceID: 9834}
     - Class: 114
-      Script: {instanceID: 9968}
+      Script: {instanceID: 9980}
     - Class: 114
-      Script: {instanceID: 10144}
+      Script: {instanceID: 10156}
     - Class: 114
-      Script: {instanceID: 10148}
+      Script: {instanceID: 10160}
     - Class: 114
-      Script: {instanceID: 10226}
+      Script: {instanceID: 10238}
     - Class: 114
-      Script: {instanceID: 10264}
+      Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10322}
+      Script: {instanceID: 10334}
     - Class: 114
-      Script: {instanceID: 10400}
+      Script: {instanceID: 10412}
     - Class: 114
-      Script: {instanceID: 10402}
+      Script: {instanceID: 10414}
     - Class: 114
-      Script: {instanceID: 10582}
+      Script: {instanceID: 10594}
     - Class: 114
-      Script: {instanceID: 10714}
+      Script: {instanceID: 10726}
     - Class: 114
-      Script: {instanceID: 10718}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 10760}
+      Script: {instanceID: 10772}
     - Class: 114
-      Script: {instanceID: 10862}
+      Script: {instanceID: 10874}
     - Class: 114
-      Script: {instanceID: 10934}
-    - Class: 114
-      Script: {instanceID: 10968}
+      Script: {instanceID: 10946}
     - Class: 114
       Script: {instanceID: 10980}
     - Class: 114
-      Script: {instanceID: 11088}
+      Script: {instanceID: 10992}
     - Class: 114
-      Script: {instanceID: 11132}
+      Script: {instanceID: 11102}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11146}
     - Class: 114
-      Script: {instanceID: 11196}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11246}
+      Script: {instanceID: 11210}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 11260}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11390}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 11486}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11500}
     - Class: 114
-      Script: {instanceID: 11642}
+      Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 11682}
+      Script: {instanceID: 11656}
     - Class: 114
-      Script: {instanceID: 11774}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 11814}
+      Script: {instanceID: 11788}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 11828}
     - Class: 114
-      Script: {instanceID: 11972}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 11988}
+      Script: {instanceID: 11986}
     - Class: 114
-      Script: {instanceID: 12020}
+      Script: {instanceID: 12002}
     - Class: 114
-      Script: {instanceID: 12050}
+      Script: {instanceID: 12034}
     - Class: 114
-      Script: {instanceID: 12054}
+      Script: {instanceID: 12064}
     - Class: 114
-      Script: {instanceID: 12074}
+      Script: {instanceID: 12068}
     - Class: 114
-      Script: {instanceID: 12244}
+      Script: {instanceID: 12088}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12098}
     - Class: 114
-      Script: {instanceID: 12396}
+      Script: {instanceID: 12260}
     - Class: 114
-      Script: {instanceID: 12510}
+      Script: {instanceID: 12278}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12412}
     - Class: 114
-      Script: {instanceID: 12820}
+      Script: {instanceID: 12526}
     - Class: 114
-      Script: {instanceID: 13186}
+      Script: {instanceID: 12656}
     - Class: 114
-      Script: {instanceID: 13316}
+      Script: {instanceID: 12836}
     - Class: 114
-      Script: {instanceID: 31894}
+      Script: {instanceID: 13202}
+    - Class: 114
+      Script: {instanceID: 13332}
+    - Class: 114
+      Script: {instanceID: 48380}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -219,8 +220,6 @@ ScriptsOnlyBuild:
     - Class: 137
       Script: {instanceID: 0}
     - Class: 157
-      Script: {instanceID: 0}
-    - Class: 182
       Script: {instanceID: 0}
     - Class: 195
       Script: {instanceID: 0}
@@ -557,6 +556,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: 85ef68ab01584dacb19e67c0fe877157
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Void
+  - hash:
+      serializedVersion: 2
       Hash: 8fec8c34a943100b8f6dc4e69e555ad8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -827,6 +832,12 @@ ScriptsOnlyBuild:
     className: Physics2DRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 219b3134a4f5445ee90a3c12c310bff2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ability_Description_Panel
+  - hash:
+      serializedVersion: 2
       Hash: a64b8ff703a69f3352c424e9d0bc1c49
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering
@@ -1061,16 +1072,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 219b3134a4f5445ee90a3c12c310bff2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Ability_Description_Panel
-  - hash:
-      serializedVersion: 2
-      Hash: 85ef68ab01584dacb19e67c0fe877157
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Void
+    className: Rotator
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

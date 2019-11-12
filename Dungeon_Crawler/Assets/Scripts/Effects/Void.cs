@@ -22,7 +22,6 @@ public class Void : BaseEffect
     {
         bar.ToggleEffectDisplay(true);
         bar.SetEffectValue(duration / MaxDuration);
-        duration = MaxDuration;
         timer += Time.deltaTime;
         if(timer > 1)
         {

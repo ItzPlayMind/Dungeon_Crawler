@@ -17,7 +17,7 @@ MonoBehaviour:
     enemy gets to close they will explode, poisoning them in the process.
   cooldown: 25
   maxUsage: 4
-  minLevel: 3
+  minLevel: 0
   onUseMethodName: PoisonBombsUse
   onUseData: {fileID: 11400000, guid: 564a4164d92b41849b32b531b606eae6, type: 2}
   onHitMethodName: PoisonBombsHit

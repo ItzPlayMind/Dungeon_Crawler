@@ -66,6 +66,8 @@ io.on("connection", (socket) => {
         }
         else{
             io.emit("win", {redTeam: (redTeamScore >= 15), blueTeam: (blueTeamScore >= 15)});
+            redTeamScore = 0;
+            blueTeamScore = 0;
         }
     });
 

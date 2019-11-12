@@ -200,7 +200,7 @@ public class ScriptSkills
     {
 
         GameObject user = NetworkManager.instance.GetPlayerByID(ID);
-        var obj = GameObject.Instantiate(data.objects[0], user.transform.position + Vector3.up, user.transform.rotation);
+        var obj = GameObject.Instantiate(data.objects[0], position + Vector3.up, user.transform.rotation);
         if (!user.GetComponent<NetworkIdentity>().isLocal)
         {
             obj.transform.GetChild(0).gameObject.SetActive(false);
@@ -208,33 +208,26 @@ public class ScriptSkills
         var trigger = obj.GetComponent<NetworkTrigger>();
         trigger.onHit += skill.OnHit;
         trigger.onStay += BlackHoleStay;
-        trigger.onExit += BlackHoleExit;
         trigger.user = user;
         GameObject.Destroy(obj, 10f);
         user.GetComponent<Character_Animator>().PlayAnimation(Character_Animator.AnimationState.Cast);
-        obj.GetComponent<Rigidbody>().JumpTowards(position, 75);
+        //obj.GetComponent<Rigidbody>().JumpTowards(position, 45);
     }
 
-    public static void BlackHoleStay(GameObject user, GameObject target, Vector3 initialPos)
+    public static void BlackHoleStay(GameObject target, GameObject user, Vector3 initialPos)
     {
         Vector3 dir = (initialPos - target.transform.position).normalized;
         dir.y = 0;
-        target.transform.position += dir * 2f;
-    }
-
-    public static void BlackHoleExit(GameObject user, GameObject target, Vector3 initialPos)
-    {
-        if(target.GetComponent<Void>() != null)
-        {
-            GameObject.DestroyImmediate(target.GetComponent<Void>());
-        }
+        target.transform.position += dir*Time.deltaTime * 7f;
+        var voidStun = target.GetComponent<Void>();
+        voidStun.SetDuration(voidStun.MaxDuration);
     }
 
     public static void BlackHoleHit(SkillData data, GameObject user, GameObject target, Vector3 initialPos, Skill skill)
     {
         var stun = target.AddComponent<Void>();
         stun.damage = skill.damage;
-        stun.MaxDuration = 100;
+        stun.MaxDuration = 5;
         stun.Setup();
     }
 }

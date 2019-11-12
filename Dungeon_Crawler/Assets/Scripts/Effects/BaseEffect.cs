@@ -7,6 +7,11 @@ public class BaseEffect : MonoBehaviour
     public float MaxDuration;
     protected float duration;
 
+    public void SetDuration(float d)
+    {
+        duration = d;
+    }
+
     public void Setup()
     {
         duration = MaxDuration;
