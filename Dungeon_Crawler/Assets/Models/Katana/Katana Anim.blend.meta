@@ -6,7 +6,32 @@ ModelImporter:
   - first:
       74: 1989289236423521904
     second: Default Take
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: D_tails
+    second: {fileID: 2100000, guid: 87f927de4ced43a4abb62c29edd55def, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Garde
+    second: {fileID: 2100000, guid: 355c073669bf7e746b84e3a301564755, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lame
+    second: {fileID: 2100000, guid: 01a720190ccc0464c88569af9497ace9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Light
+    second: {fileID: 2100000, guid: 66846db5aa86d3640877ca71faefc57d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Manche
+    second: {fileID: 2100000, guid: 2cfed18caa463174296f82f10e66d19e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

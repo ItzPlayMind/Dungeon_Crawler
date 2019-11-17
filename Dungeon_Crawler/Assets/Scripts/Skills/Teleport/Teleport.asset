@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da1d5c840d1cacd47b948902fd9f5138, type: 3}
+  m_Name: Teleport
+  m_EditorClassIdentifier: 
+  damage: 0
+  description: Teleports you to the targeted location
+  abilityPoints: 1
+  cooldown: 30
+  maxUsage: -1
+  minLevel: 0
+  onUseMethodName: TeleportUse
+  onUseData: {fileID: 0}
+  onHitMethodName: 
+  onHitData: {fileID: 0}
+  onDisplayMethodName: ClickCircleAttack
+  onDisplayData: {fileID: 11400000, guid: dbb69ad92c2947341953ca9404e631bf, type: 2}
+  icon: {fileID: 1187844295915201507, guid: b01e3ff306cd0434db37c15bf89703bc, type: 3}

@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 0
   description: Lets you jump a specific distance. If used correctly you can jump over
     walls or enemies to escape or engage. Stuns you after you land.
+  abilityPoints: 1
   cooldown: 5
   maxUsage: -1
   minLevel: 0

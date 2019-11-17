@@ -83,4 +83,18 @@ public class Ability_Display : MonoBehaviour
         display.transform.localScale = new Vector3(radius / 10, 0, radius / 10);
         display.GetComponent<MeshRenderer>().material = circleMat;
     }
+
+    public void DisplayClickCircleAttack(Vector3 origin, Vector3 mousePos, float radius)
+    {
+        if (display == null)
+        {
+            display = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            //display.layer = LayerMask.NameToLayer("Mask");
+            DestroyImmediate(display.GetComponent<Collider>());
+        }
+        display.transform.SetParent(transform);
+        display.transform.position = mousePos;
+        display.transform.localScale = new Vector3(radius / 10, 0, radius / 10);
+        display.GetComponent<MeshRenderer>().material = circleMat;
+    }
 }

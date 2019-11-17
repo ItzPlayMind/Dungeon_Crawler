@@ -13,7 +13,9 @@ public class Character_Animator : NetworkBehaviour
     }
 
     [SerializeField] Animator animator;
-   
+
+    public Animator AnimatorController { get => animator; }
+
     public void PlayAnimation(AnimationState state)
     {
         JSONObject obj = new JSONObject();
@@ -37,11 +39,13 @@ public class Character_Animator : NetworkBehaviour
                 break;
         }
         obj.AddField("id", ID);
+        obj.AddField("speed", (int)(animator.speed*100));
         NetworkManager.instance.Emit("play animation", obj);
     }
 
-    public void PlayAnimation(string name)
+    public void PlayAnimation(string name, float speed)
     {
+        animator.speed = speed/100f;
         switch (name)
         {
             case "Idle":

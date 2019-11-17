@@ -66,7 +66,6 @@
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
-    <Compile Include="Assets\Rotator.cs" />
     <Compile Include="Assets\Scripts\Ability_Description_Panel.cs" />
     <Compile Include="Assets\Scripts\Ability_Display.cs" />
     <Compile Include="Assets\Scripts\Ability_Display_Panel.cs" />
@@ -75,12 +74,15 @@
     <Compile Include="Assets\Scripts\AbilityBTN_Prefab.cs" />
     <Compile Include="Assets\Scripts\AnimationEventSender.cs" />
     <Compile Include="Assets\Scripts\Camera_Movement.cs" />
+    <Compile Include="Assets\Scripts\CastTime.cs" />
     <Compile Include="Assets\Scripts\Character_Ability.cs" />
     <Compile Include="Assets\Scripts\Character_Animator.cs" />
     <Compile Include="Assets\Scripts\Character_Controller.cs" />
+    <Compile Include="Assets\Scripts\Character_Items.cs" />
     <Compile Include="Assets\Scripts\Character_Stats.cs" />
     <Compile Include="Assets\Scripts\Effects\Airborne.cs" />
     <Compile Include="Assets\Scripts\Effects\BaseEffect.cs" />
+    <Compile Include="Assets\Scripts\Effects\Healing.cs" />
     <Compile Include="Assets\Scripts\Effects\Poison.cs" />
     <Compile Include="Assets\Scripts\Effects\Stunned.cs" />
     <Compile Include="Assets\Scripts\Effects\TrueSight.cs" />
@@ -97,7 +99,9 @@
     <Compile Include="Assets\Scripts\NetworkIdentity.cs" />
     <Compile Include="Assets\Scripts\NetworkManager.cs" />
     <Compile Include="Assets\Scripts\NetworkScriptableObject.cs" />
+    <Compile Include="Assets\Scripts\NetworkTimer.cs" />
     <Compile Include="Assets\Scripts\NetworkTrigger.cs" />
+    <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\Skills\ScriptSkills.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\Skills\SkillData.cs" />

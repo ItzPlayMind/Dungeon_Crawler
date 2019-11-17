@@ -14,14 +14,26 @@ public class Ability_Selector : MonoBehaviour
     }
     #endregion
 
+    class Comparer : IComparer<Skill>
+    {
+        public int Compare(Skill x, Skill y)
+        {
+            return x.minLevel.CompareTo(y.minLevel);
+        }
+    }
+
     public Image[] selectedAbilitieImages;
+    public Image[] abilityPointImages;
     public List<Skill> allSkills = new List<Skill>();
     public GameObject presetAbility;
     public Transform abilityContent;
     public Button nextButton;
+    public int MaxAbilityPoints;
+    int currentAbilityPoints;
 
     private void Start()
     {
+        allSkills.Sort(new Comparer());
         foreach (var item in allSkills)
         {
             var a = Instantiate(presetAbility, abilityContent);
@@ -31,18 +43,23 @@ public class Ability_Selector : MonoBehaviour
 
     public void Select(Skill skill)
     {
-        for (int i = 0; i < NetworkManager.instance.abilitiesForSpawn.Length; i++)
+        if (currentAbilityPoints + skill.abilityPoints <= MaxAbilityPoints)
         {
-            if (NetworkManager.instance.abilitiesForSpawn[i] == null)
+            for (int i = 0; i < NetworkManager.instance.abilitiesForSpawn.Length; i++)
             {
-                NetworkManager.instance.abilitiesForSpawn[i] = skill;
-                break;
+                if (NetworkManager.instance.abilitiesForSpawn[i] == null)
+                {
+                    NetworkManager.instance.abilitiesForSpawn[i] = skill;
+                    currentAbilityPoints += skill.abilityPoints;
+                    break;
+                }
             }
         }
     }
 
     public void Remove(int index)
     {
+        currentAbilityPoints -= NetworkManager.instance.abilitiesForSpawn[index].abilityPoints;
         NetworkManager.instance.abilitiesForSpawn[index] = null;
     }
 
@@ -60,6 +77,13 @@ public class Ability_Selector : MonoBehaviour
                 selectedAbilitieImages[i].sprite = null;
                 isVisible = false;
             }
+        }
+        for (int i = 0; i < MaxAbilityPoints; i++)
+        {
+            if(currentAbilityPoints > i)
+                abilityPointImages[i].color = new Color(0, 0, 1, 1);
+            else
+                abilityPointImages[i].color = new Color(1, 1, 1, 1);
         }
         nextButton.gameObject.SetActive(isVisible);
     }

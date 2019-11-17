@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 15
   description: Shoots out a knife. If an enemy is hit it stunnes it and pulls it towards
     you.
+  abilityPoints: 2
   cooldown: 5
   maxUsage: 2
   minLevel: 0

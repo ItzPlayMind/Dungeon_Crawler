@@ -18,7 +18,7 @@ public class NetworkTrigger : MonoBehaviour
         {
             if (identity.ID != user.GetComponent<NetworkIdentity>().ID)
             {
-                onHit(other.gameObject, user,transform.position);
+                onHit?.Invoke(other.gameObject, user,transform.position);
                 if(destroyOnTrigger)
                     Destroy(gameObject);
             }
@@ -32,7 +32,7 @@ public class NetworkTrigger : MonoBehaviour
         {
             if (identity.ID != user.GetComponent<NetworkIdentity>().ID)
             {
-                onExit(other.gameObject, user, transform.position);
+                onExit?.Invoke(other.gameObject, user, transform.position);
             }
         }
     }
@@ -44,7 +44,7 @@ public class NetworkTrigger : MonoBehaviour
         {
             if (identity.ID != user.GetComponent<NetworkIdentity>().ID)
             {
-                onStay(other.gameObject, user, transform.position);
+                onStay?.Invoke(other.gameObject, user, transform.position);
             }
         }
     }

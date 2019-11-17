@@ -42,15 +42,23 @@ public class Character_Stats : NetworkBehaviour
         healthbar.SetHealthValue(1);
         healthbar.SetLevelValue(0);
         xp = GetStat("XP");
+        gold = GetStat("Gold");
         if (isLocal)
         {
             healthbar.SetLevel(1);
             xp.MaxValue = 10;
             InvokeRepeating("AddXP", 1, 1);
+            InvokeRepeating("AddGold", 1, 1);
         }
     }
 
     Stat xp;
+    Stat gold;
+
+    void AddGold()
+    {
+        gold.value += 2;
+    }
 
     void AddXP()
     {
@@ -162,17 +170,20 @@ public class Character_Stats : NetworkBehaviour
 
     public bool TakeDamage(float value)
     {
-        Debug.Log(gameObject.name + " took " + value + " Damage!");
         var health = GetStat("Health");
         health.value = Mathf.Max(health.value - value, 0);
         healthbar.SetHealthValue(health.value / health.MaxValue);
+        
         if (health.value <= 0)
         {
             gameObject.SetActive(false);
             NetworkManager.instance.Respawn(gameObject);
-            JSONObject obj = new JSONObject();
-            obj.AddField("isRedTeam", !GetComponent<Character_Controller>().isRedTeam);
-            NetworkManager.instance.Emit("kill player", obj);
+            if (isLocal)
+            {
+                JSONObject obj = new JSONObject();
+                obj.AddField("isRedTeam", !GetComponent<Character_Controller>().isRedTeam);
+                NetworkManager.instance.Emit("kill player", obj);
+            }
             return true;
         }
         return false;

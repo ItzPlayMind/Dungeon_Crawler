@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptItems : MonoBehaviour
+public class ScriptItems
 {
-    // Start is called before the first frame update
-    void Start()
+    public static void HealingPotionActive(Item item, int index, GameObject holder, Vector3 mousePosition)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        var heal = holder.AddComponent<Healing>();
+        heal.MaxDuration = 10;
+        heal.healAmount = 25;
+        heal.Setup();
+        holder.GetComponent<Character_Stats>().RemoveItem(index);
         
     }
 }

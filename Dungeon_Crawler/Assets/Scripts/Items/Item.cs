@@ -58,15 +58,14 @@ public class Item : ScriptableObject
         }
     }
 
-    public Vector3 Active(GameObject holder, Vector3 mousePosition)
+    public void Active(GameObject holder, Vector3 mousePosition, int index)
     {
         if (activeMethodName != "")
         {
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
             Assembly assembly = assemblies.FirstOrDefault(a => a.GetType("ScriptItems", false) != null);
-            return (Vector3)assembly.GetType("ScriptItems").GetMethod(passivMethodName).Invoke(null, new object[] { this, holder, mousePosition });
+            assembly.GetType("ScriptItems").GetMethod(activeMethodName).Invoke(null, new object[] { this, index, holder, mousePosition });
         }
-        return mousePosition;
     }
 
     public Item Copy()

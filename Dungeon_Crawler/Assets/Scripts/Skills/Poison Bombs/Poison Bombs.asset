@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 5
   description: Lets you throw 4 poison bombs which are only visible for you. If an
     enemy gets to close they will explode, poisoning them in the process.
+  abilityPoints: 6
   cooldown: 25
   maxUsage: 4
   minLevel: 0

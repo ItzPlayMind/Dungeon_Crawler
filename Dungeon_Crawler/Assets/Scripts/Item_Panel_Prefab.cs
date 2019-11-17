@@ -5,13 +5,15 @@ using UnityEngine.UI;
 
 public class Item_Panel_Prefab : MonoBehaviour
 {
-    public Item item;
+    [HideInInspector]public Item item;
     public Image iconSprite;
+    public TMPro.TextMeshProUGUI costText;
     
     public void Setup(Item item)
     {
         this.item = item;
         iconSprite.sprite = item.icon;
+        costText.text = item.cost + "";
     }
 
     public void Buy()

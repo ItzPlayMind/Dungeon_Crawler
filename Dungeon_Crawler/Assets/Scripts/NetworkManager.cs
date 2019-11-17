@@ -237,7 +237,7 @@ public class NetworkManager : SocketIOComponent
                 if (item.ID == e.data["id"].ToString().RemoveQuotations())
                 {
                     var animator = item.GetComponent<Character_Animator>();
-                    animator.PlayAnimation(e.data["state"].ToString().RemoveQuotations());
+                    animator.PlayAnimation(e.data["state"].ToString().RemoveQuotations(),e.data["speed"].f);
                     break;
                 }
             }
@@ -282,6 +282,29 @@ public class NetworkManager : SocketIOComponent
                     entity.GetComponent<Character_Ability>().skills = items.ToArray();
                     break;
                 }
+            }
+        });
+
+        On("use item", (SocketIOEvent e) =>
+        {
+            var behaviours = GameObject.FindObjectsOfType<NetworkIdentity>();
+
+            GameObject user = null;
+
+            foreach (var item in behaviours)
+            {
+                if (item.ID == e.data["id"].ToString().RemoveQuotations())
+                {
+                    user = item.gameObject;
+                    break;
+                }
+            }
+
+            if (user != null)
+            {
+                var items = user.GetComponent<Character_Stats>().Items;
+                int index = int.Parse(e.data["itemIndex"].ToString());
+                items[index].Active(user, GetVectorFromData(e.data["pos"]), index);
             }
         });
     }

@@ -11,6 +11,7 @@ public class Skill : ScriptableObject
 {
     public float damage;
     public string description;
+    public int abilityPoints;
     public float cooldown;
     public int maxUsage;
     int defaultMaxUsage;
@@ -99,6 +100,7 @@ public class Skill : ScriptableObject
     {
         Skill skill = new Skill();
         skill.name = name;
+        skill.abilityPoints = abilityPoints;
         skill.damage = damage;
         skill.description = description;
         skill.onUseData = onUseData;

@@ -21,6 +21,7 @@ public class Character_Controller : NetworkBehaviour
 
     public void Setup(bool notSameTeam)
     {
+
         if (notSameTeam)
         {
             if (!isLocal)
@@ -32,6 +33,7 @@ public class Character_Controller : NetworkBehaviour
 
     void Start()
     {
+
         animator = GetComponent<Character_Animator>();
         agent = GetComponent<NavMeshAgent>();
         ownStats = GetComponent<Character_Stats>();
@@ -45,6 +47,7 @@ public class Character_Controller : NetworkBehaviour
     public void Attack()
     {
         animator.PlayAnimation(Character_Animator.AnimationState.Attack);
+        animator.AnimatorController.speed = ownStats.GetStat("Attack Speed").value;
         canAttack = false;
     }
 
@@ -54,30 +57,32 @@ public class Character_Controller : NetworkBehaviour
         {
             if (Vector3.Distance(target.transform.position, transform.position) <= ownStats.GetStat("Attack Range").value)
             {
-                if (target.GetComponent<Character_Stats>().TakeDamage(ownStats.GetStat("Attack Damage").value))
+                if (DealDamage(ownStats.GetStat("Attack Damage").value,target))
                 {
                     ownStats.GetStat("Gold").value += 100;
                     ownStats.AddXP(10);
                 }
-                SendAttackDamage(ownStats.GetStat("Attack Damage").value, target);
             }
         }
         canAttack = true;
+        animator.AnimatorController.speed = 1;
     }
 
-    public void SendAttackDamage(float damage, GameObject target)
+    public bool DealDamage(float value, GameObject target)
     {
-        JSONObject obj = new JSONObject();
-        Debug.Log(target.GetComponent<NetworkIdentity>().ID);
-        obj.AddField("id", target.GetComponent<NetworkIdentity>().ID.ToString());
-        obj.AddField("damage", damage);
-        NetworkManager.instance.Emit("damage", obj);
+        JSONObject jobj = new JSONObject();
+        jobj.AddField("id", target.GetComponent<NetworkIdentity>().ID.ToString());
+        jobj.AddField("damage", value);
+        NetworkManager.instance.Emit("damage", jobj);
+        return target.GetComponent<Character_Stats>().TakeDamage(value);
     }
 
     void Update()
     {
         if (isLocal)
         {
+            if (agent.velocity != Vector3.zero && CastTime.instance.Running)
+                CastTime.instance.Abort();
             if(target != null)
             {
                 agent.SetDestination(target.transform.position);

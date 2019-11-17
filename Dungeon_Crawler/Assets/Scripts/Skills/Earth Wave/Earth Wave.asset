@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 50
   description: Sends out a an Earth Wave which goes trough walls and knocks up enemies.
     Knocked up enemies will be visible after landing.
+  abilityPoints: 6
   cooldown: 60
   maxUsage: -1
   minLevel: 0

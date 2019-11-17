@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 35
   description: Makes the earth under your feet move and collapse knocking enemies
     in the air and then stunning them for 1 second.
+  abilityPoints: 6
   cooldown: 30
   maxUsage: -1
   minLevel: 0

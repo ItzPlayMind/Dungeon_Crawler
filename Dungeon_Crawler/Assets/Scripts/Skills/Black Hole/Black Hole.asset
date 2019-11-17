@@ -15,6 +15,7 @@ MonoBehaviour:
   damage: 5
   description: Creates a black hole at the targeted location. When the black hole
     lands it pulls nearby enemies towards it dealing damage over time.
+  abilityPoints: 6
   cooldown: 90
   maxUsage: -1
   minLevel: 0

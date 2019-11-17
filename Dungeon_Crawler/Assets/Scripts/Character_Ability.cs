@@ -90,6 +90,10 @@ public class Character_Ability : NetworkBehaviour
             }
             else
             {
+                if (activeSkill != null && CastTime.instance.Running)
+                {
+                    CastTime.instance.Abort();
+                }
                 if (activeSkill != null)
                 {
                     activeSkill.Use(ID, destinationPos);
@@ -103,6 +107,7 @@ public class Character_Ability : NetworkBehaviour
                 display.ResetDisplay();
                 activeSkill = null;
             }
+            
             int i = 0;
             foreach (var item in skills)
             {

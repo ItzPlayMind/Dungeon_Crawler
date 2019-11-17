@@ -91,6 +91,10 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("change item", player);
     });
 
+    socket.on("use item", (data) => {
+        socket.broadcast.emit("use item", data);
+    });
+
     socket.on("change abilities", (data) => {
         var x = [];
         for (var i = 0; i <= 3; i++) {

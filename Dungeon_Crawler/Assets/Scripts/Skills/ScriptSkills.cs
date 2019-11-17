@@ -20,6 +20,12 @@ public class ScriptSkills
         return mousePos;
     }
 
+    public static object ClickCircleAttack(SkillData data, Vector3 mousePos, Vector3 dir, Vector3 center, Ability_Display display)
+    {
+        display.DisplayClickCircleAttack(center, mousePos + Vector3.up * 0.11f, data.floats[0]);
+        return mousePos;
+    }
+
     public static object CircleAttack(SkillData data, Vector3 mousePos, Vector3 dir, Vector3 center, Ability_Display display)
     {
         display.DisplayCircleClickAttack(center, data.floats[0]);
@@ -84,7 +90,7 @@ public class ScriptSkills
             {
                 if (item.GetComponent<NetworkIdentity>().ID == ID)
                     continue;
-                if (item.GetComponent<Character_Stats>().TakeDamage(skill.damage))
+                if (user.GetComponent<Character_Controller>().DealDamage(skill.damage, item.gameObject))
                 {
                     user.GetComponent<Character_Stats>().GetStat("Gold").value += 100;
                 }
@@ -99,8 +105,23 @@ public class ScriptSkills
 
     public static void EagleVisionUse(SkillData data, string ID, Vector3 position, Skill skill)
     {
-
         GameObject user = NetworkManager.instance.GetPlayerByID(ID);
+        if (user.GetComponent<NetworkIdentity>().isLocal)
+        {
+            CastTime.instance.Set(1f, "Casting Eagle Vision", OnEagleVisionCast, user, data, skill);
+        }
+        else
+        {
+            NetworkTimer.Create(1f, OnEagleVisionCast, user, data, skill);
+        }
+    }
+
+    public static void OnEagleVisionCast(object[] objects)
+    {
+        GameObject user = (GameObject)objects[0];
+        SkillData data = (SkillData)objects[1];
+        Skill skill = (Skill)objects[2];
+
         user.GetComponent<Character_Animator>().PlayAnimation(Character_Animator.AnimationState.Cast);
         var teamUser = user.GetComponent<Character_Controller>().isRedTeam;
         var yourTeam = NetworkManager.instance.Player.GetComponent<Character_Controller>().isRedTeam;
@@ -115,10 +136,7 @@ public class ScriptSkills
         {
             obj.transform.GetChild(0).gameObject.SetActive(false);
         }
-
     }
-
-    
 
     public static void EagleVisionHit(SkillData data, GameObject user, GameObject target, Vector3 initialPos, Skill skill)
     {
@@ -143,7 +161,7 @@ public class ScriptSkills
 
     public static void EarthWaveHit(SkillData data, GameObject user, GameObject target, Vector3 initialPos, Skill skill)
     {
-        if (target.GetComponent<Character_Stats>().TakeDamage(skill.damage))
+        if (user.GetComponent<Character_Controller>().DealDamage(skill.damage,target))
         {
             user.GetComponent<Character_Stats>().GetStat("Gold").value += 100;
         }
@@ -229,5 +247,39 @@ public class ScriptSkills
         stun.damage = skill.damage;
         stun.MaxDuration = 5;
         stun.Setup();
+    }
+
+    public static void TeleportUse(SkillData data, string ID, Vector3 position, Skill skill)
+    {
+        GameObject user = NetworkManager.instance.GetPlayerByID(ID);
+        if (user.GetComponent<NetworkIdentity>().isLocal)
+        {
+            CastTime.instance.Set(5f, "Casting Teleport", OnTeleportCast, user, position);
+        }
+        else
+        {
+            NetworkTimer.Create(5f, OnTeleportCast, user, position);
+        }
+    }
+
+    public static void OnTeleportCast(object[] objects)
+    {
+        GameObject user = (GameObject)objects[0];
+        Vector3 position = (Vector3)objects[1];
+        var stun = user.AddComponent<Stunned>();
+        stun.MaxDuration = 1f;
+        stun.Setup();
+        user.transform.position = position + Vector3.up;
+    }
+
+    public static void TotemUse(SkillData data, string ID, Vector3 position, Skill skill)
+    {
+        var user = NetworkManager.instance.GetPlayerByID(ID).GetComponent<Character_Controller>();
+        var local = NetworkManager.instance.Player.GetComponent<Character_Controller>();
+        var gb = GameObject.Instantiate(data.objects[0], position, Quaternion.identity);
+        if(user.isRedTeam != local.isRedTeam)
+        {
+            gb.transform.GetChild(0).gameObject.SetActive(false);
+        }
     }
 }
